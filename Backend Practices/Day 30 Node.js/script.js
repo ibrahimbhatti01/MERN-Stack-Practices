@@ -1,4 +1,5 @@
-import {PI, sum} from "./math.js";
+// Import PI and sum from math.js
+import { PI, sum } from "./math.js";
 
-console.log(PI, sum(2,3));
-
+// Log PI and the sum of 2 and 3
+console.log(PI, sum(2, 3));
