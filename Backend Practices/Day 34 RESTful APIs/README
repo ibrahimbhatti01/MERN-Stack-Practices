@@ -1,0 +1,18 @@
+## RESTful APIs practice
+
+In this repo I've practiced the concept of:
+- Connecting Frontend and Backend
+- Building live Backend Server
+- CRUD operations
+  - Create //POST request
+  - Read //GET request
+  - Update
+    - //PUT -> (updates existing data)
+    - //PATCH -> (updates existing data partially)
+  - Delete //DELETE request
+
+By developing a simple Website replicating Quora, How posts are created, deleted, and edited by sending different API request.
+
+## Packages used
+- npm ***UUID package*** (for generating random id's)
+- npm ***method-override*** (for overriding the get and post methods of html forms with, other type of requests.)

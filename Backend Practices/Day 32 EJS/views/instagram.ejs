@@ -1,0 +1,22 @@
+<%- include("includes/head.ejs") %> <!-- Include head section from external file for consistent page layout -->
+
+<body class="body"> <!-- Start of body section with class 'body' for styling -->
+
+    <h2>This page belongs to @<%= data.name %></h2> <!-- Display the username dynamically -->
+
+    <button type="button">Follow</button> <!-- Button to follow the user -->
+    <button type="button">Message</button> <!-- Button to send a message to the user -->
+
+    <p>Followers: <%= data.followers %> &nbsp;&nbsp;&nbsp;&nbsp; Followings: <%= data.following %></p> <!-- Display user’s followers and followings count -->
+
+    <hr> <!-- Horizontal line to separate sections -->
+
+    <% for(post of data.posts) { %> <!-- Start of loop to iterate through user’s posts -->
+
+        <img src="<%= post.image %>" alt="Some Image"> <!-- Display post image dynamically -->
+        <p>likes: <%= post.likes %> &nbsp;&nbsp;&nbsp;&nbsp; Comments: <%= post.comments %></p> <!-- Display post likes and comments count -->
+
+    <% } %> <!-- End of loop -->
+
+</body>
+</html>

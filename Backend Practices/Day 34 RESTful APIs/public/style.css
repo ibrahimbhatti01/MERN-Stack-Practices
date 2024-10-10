@@ -1,0 +1,80 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container holding all posts */
+.post-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling using Georgia font for the "Quora" look */
+.post-container h1 {
+    font-family: 'Georgia', serif; /* Applying Georgia font */
+    color: #7f0000; /* Dark red title for Quora Posts */
+    text-align: left;
+    font-size: 36px; /* Slightly larger for emphasis */
+    margin-bottom: 20px;
+}
+
+/* Styling for individual post containers */
+.post {
+    background-color: #fce1b3; /* Light orange background */
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    position: relative;
+}
+
+/* Post author styling */
+.post p strong {
+    font-style: italic;
+    font-size: 18px;
+    color: #000; /* Black color for username */
+}
+
+/* Link styling for detail/edit */
+a {
+    color: #0044cc; /* Blue color for links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Styling for delete button */
+button {
+    background-color: #cc0000; /* Red button for delete */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #b30000;
+}
+
+/* Styling for the "Write new Post" link */
+.new-post {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #0044cc;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.new-post:hover {
+    background-color: #003399;
+}

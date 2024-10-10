@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Forms</title>
+    </head>
+    <body>
+        <form action="/action">
+            <div>
+            <label for="Username">Username:</label>
+            <input type="text" placeholder="Enter your Username" id="Username" name="user">
+            </div>
+            <div>
+            <label for="password">Password :</label>
+            <input type="password" placeholder="Enter your Password" id="password" name="pass">
+            </div>
+            <button type="submit">submit</button>
+        </form>
+        <hr>
+        <form action="https://www.google.com/search">
+            <input type="text" placeholder="Search in google" name="q">
+            <button type="submit">Search</button>
+            <button type="reset">reset</button>
+        </form>
+        <hr>
+        <form action="https://www.youtube.com/results">
+            <input type="text" placeholder="Search in youtube" name="search_query">
+            <button type="submit">Search</button>
+            <button type="reset">reset</button>
+        </form>
+        <hr>
+        <form action="https://www.linkedin.com/search/results/all/">
+            <input type="text" placeholder="Search in linkedin" name="keywords">
+            <button type="submit">Search</button>
+            <button type="reset">reset</button>
+        </form>
+        <hr>
+        <form action="https://www.quora.com/search">
+            <input type="text" placeholder="Search in quora" name="q">
+            <button type="submit">Search</button>
+            <button type="reset">reset</button>
+        </form>
+        <hr>
+        <br>
+        <form action="/server">
+            <div>
+                Choose your subjects
+                <input type="checkbox" id="math" name="sub" value="math">
+                <label for="math">mathematics</label>
+                <input type="checkbox" id="sci" name="sub" value="sci">
+                <label for="sci">science</label>
+                <input type="checkbox" id="eng" name="sub" value="eng">
+                <label for="eng">english</label>
+            </div>
+            <br>
+            <div>
+                Choose your favorite
+                <input type="radio" id="mango" name="fruit" value="mango">
+                <label for="mango">mango</label>
+                <input type="radio" id="apple" name="fruit" value="apple">
+                <label for="apple">apple</label>
+                <input type="radio" id="banana" name="fruit" value="banana">
+                <label for="banana">banana</label>
+            </div>
+            <br>
+            <div>
+                Choose Your Profession
+                <select name="Profession" id="Profession">
+                    <option>Select</option>
+                    <option value="stu">Student</option>
+                    <option value="dev">Developer</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="vol">Select your volume level</label>
+                <input type="range" id="vol" name="vol" min="0" max="100" value="85" step="5">
+            </div>
+            <br>
+            <div>
+                <label for="feedback">Please Share Your Valuable insights here:</label>
+                <br>
+                <textarea id="feedback" name="feedback" placeholder="Write your feedback here"></textarea>
+            </div>
+            <button type="submit">submit</button>
+        </form>
+    </body>
+</html>

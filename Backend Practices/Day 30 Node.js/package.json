@@ -1,0 +1,12 @@
+{
+  "name": "day-30",
+  "version": "1.0.0",
+  "main": "math.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ibrahim",
+  "license": "ISC",
+  "description": "",
+  "type": "module"
+}

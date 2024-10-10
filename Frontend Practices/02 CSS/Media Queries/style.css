@@ -1,0 +1,33 @@
+h1{
+    background-color: yellow;
+    border: 2px solid black;
+}
+
+
+@media(min-width:500px){
+    h1{
+        background-color: darkcyan;
+        color: white;
+    }
+}
+
+@media(max-width:200px){
+    h1{
+        background-color: darkcyan;
+        color: white;
+    }
+}
+
+@media(width:600px){
+    h1{
+        background-color: darkkhaki;
+        color: aliceblue;
+    }
+}
+
+@media(min-width:300px) and (max-width:400px) {
+    h1{
+        background-color: magenta;
+        color: aliceblue;
+    }
+}

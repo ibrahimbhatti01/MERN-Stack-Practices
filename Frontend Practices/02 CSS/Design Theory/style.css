@@ -1,0 +1,9 @@
+.play-bold {
+        font-family: "Play", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+span{
+    position: relative;
+    left: 50px;
+}

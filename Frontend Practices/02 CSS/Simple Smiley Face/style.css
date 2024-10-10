@@ -1,0 +1,54 @@
+#Face{
+    height: 300px;
+    width: 300px;
+    background-color: sandybrown;
+    border-radius: 50%;
+}
+
+#mouth{
+    height: 70px;
+    width: 150px;
+    background-color: #b96565;
+    border-radius: 0 0 100px 100px;
+    position: absolute;
+    top: 180px;
+    left: 80px;
+}
+
+/* #lips{
+    height: 70px;
+    width: 150px;
+    border-radius: 0 0 100px 100px;
+    background-color: sandybrown;
+    position: fixed;
+    top: 165px;
+    left: 80px;
+}
+#lips:hover{
+    display: none;
+} */
+
+.left-eye , .right-eye{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgba(21, 21, 21, 0.948);
+    display: inline-block;
+    position: absolute;
+    top: 75px;
+    left: 75px;
+    transition: 0.25s;
+}
+
+.right-eye{
+    position: absolute;
+    left: 180px;
+}
+
+.right-eye:hover{
+    transform: scaleY(0.2);
+}
+
+.left-eye:hover{
+    transform: scaleY(0.2);
+}

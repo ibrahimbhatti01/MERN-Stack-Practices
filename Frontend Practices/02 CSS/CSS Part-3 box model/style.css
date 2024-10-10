@@ -1,0 +1,24 @@
+div {
+    height: 190px;
+    width: 300px;
+    background-color: bisque;
+    border: 20px ridge red;
+    border-top-right-radius: 30px;
+    margin: 10px;
+    padding: 10px;
+}
+
+h1{
+    border: 10px inset violet;
+    width: fit-content;
+    border-right: none;
+    border-left: none;
+}
+
+button{
+    color: blue;
+    padding: 1px 15px 1px 15px;
+    border: 3px solid black ;
+    background-color: blanchedalmond;
+    border-radius: 15px;
+}

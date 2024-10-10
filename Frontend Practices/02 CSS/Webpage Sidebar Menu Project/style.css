@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;    
+}
+.main_box{
+    background: url(photo.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+.btn_one i{
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+    left: 20px;
+    line-height: 70px;
+    transition: all 0.1s ease-in-out;
+}
+.sidebar_menu{
+    position: fixed;
+    left: -350px;
+    height: 100vh;
+    width: 300px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.101);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.504);
+    transition: all 0.3s ease-in-out;
+}
+.sidebar_menu .logo{
+    position: absolute;
+    width: 100%;
+    line-height: 70px;
+    height: 60px;
+    box-shadow:0px 0 3px rgba(255, 255, 255, 0.507) ;
+}
+.sidebar_menu .logo a {
+    position: absolute;
+    left: 10%;
+    color: white;
+    text-decoration: none;  
+    font-size: 25px;
+    font-weight: 400;
+}
+.sidebar_menu .btn_two i{
+    position: absolute;
+    left: 270px;
+    top: 22px;
+    font-size: 25px;
+    color: grey;
+    opacity: 0;
+    transition: all 0.1s ease-in-out;
+}
+.sidebar_menu .menu{
+    position: absolute;
+    top: 80px;
+    width: 100%;
+}
+.sidebar_menu .menu li{
+    padding: 12px 20px;
+    margin-top: 5px; 
+}
+.sidebar_menu .menu i,a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+.sidebar_menu .menu i{
+    padding-right: 8px;
+}
+.sidebar_menu .social_media{
+    position: absolute;
+    bottom: 20px;
+    left: 27%;
+}
+.sidebar_menu .social_media i{
+    color: rgba(255, 255, 255, 0.509);
+    padding: 0 3px;
+}
+#check{
+    display: none;
+}
+.sidebar_menu .menu li:hover{
+    box-shadow:0 0 3px rgba(255, 255, 255, 0.507) ;
+    cursor: pointer;
+}
+.sidebar_menu .btn_two i:hover{
+    transform: scale(1.15);
+    transition: 0.05s;
+    cursor: pointer;
+}
+.btn_one i:hover{
+    transform: scale(1.15);
+    cursor: pointer;
+}
+.sidebar_menu .social_media i:hover{
+    transform: scale(1.1);
+    color: rgba(255, 255, 255, 1);
+}
+
+#check:checked ~ .btn_one{
+    opacity: 0;
+}
+#check:checked ~ .sidebar_menu{
+    left: 0;
+}
+#check:checked ~ .sidebar_menu .btn_two i{
+    opacity: 1;
+}

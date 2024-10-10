@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">                               <!-- Setting character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensuring proper scaling on mobile devices -->
+    <title>Quora Posts</title>                           <!-- Setting the page title -->
+
+    <!-- Link to Favicon (favicon in PNG format) -->
+    <link rel="icon" href="./favicon.png" type="image/png">  <!-- Favicon for browser tab -->
+
+    <link rel="stylesheet" href="/style.css">             <!-- Linking external stylesheet for styling -->
+</head>
+<body>
+
+    <!-- Container for all posts -->
+    <div class="post-container">
+        <h1>Quora Posts</h1>                             <!-- Main heading for the post listing -->
+
+        <!-- Loop through all posts and display each post -->
+        <% for (const post of posts) { %>
+            <div class="post">                            <!-- Individual post container -->
+                <p><strong>@<%= post.username %> </strong></p>   <!-- Displaying username of the post author -->
+                <p> <%= post.content %> </p>                     <!-- Displaying the content of the post -->
+                <!-- Links to view the post in detail and edit the post -->
+                <a href="http://localhost:8080/posts/<%= post.id %>">See in detail</a> | 
+                <a href="http://localhost:8080/posts/<%=post.id%>/edit">Edit Post</a> 
+                <br> <br>
+                <!-- Form to delete the post using method override to send a DELETE request -->
+                <form action="/posts/<%= post.id %>?_method=DELETE" method="post">
+                    <button>Delete Post</button>           <!-- Button to trigger post deletion -->
+                </form>
+            </div>
+        <% } %>
+
+        <!-- Link to create a new post -->
+        <a class="new-post" href="http://localhost:8080/posts/new">Write new Post</a> <!-- Link to the new post creation form -->
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Qs.02 HTML L-3</title>
+    </head>
+    <body>
+        <form action="/action">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <br>
+            <div>
+                Sex:
+                <input type="radio" id="Male" name="sex" value="Male">
+                <label for="Male">Male</label>
+                <input type="radio" id="Female" name="sex" value="Female">
+                <label for="Female">Female</label>
+            </div>
+            <br>
+            <div>
+                <label for="country">Country:</label>
+                <select id="country" name="country">
+                    <option>Select an option</option>
+                    <option value="India">India</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="Nepal">Nepal</option>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="message">Message:</label>
+                <br>
+                <textarea id="message" name="message"></textarea>
+            </div>
+            <br>
+            <div>
+                <input type="checkbox" id="subscribe" name="subscribe">
+                <label for="subscribe">Subscribe?</label>
+            </div>
+            <br>
+            <button type="submit" >Submit</button>
+        </form>
+    </body>
+</html>

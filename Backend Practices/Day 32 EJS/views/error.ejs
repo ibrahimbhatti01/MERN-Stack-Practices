@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found - Practice Instagram</title>
+  <style>
+    /* Full-screen background with animated gradient */
+    body {
+      font-family: 'Roboto', sans-serif; /* Modern, readable font */
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #2c3e50; /* Deep blue-gray background */
+      animation: backgroundAnimation 15s ease infinite; /* Background animation */
+    }
+
+    @keyframes backgroundAnimation {
+      0% { background: #2c3e50; } /* Deep blue-gray */
+      50% { background: #34495e; } /* Slightly lighter blue-gray */
+      100% { background: #2c3e50; } /* Back to deep blue-gray */
+    }
+
+    /* Center the content and give it a card-like appearance */
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+      border-radius: 8px; /* Slightly rounded corners */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+      padding: 30px 40px; /* Spacing inside the container */
+      max-width: 90%;
+      width: 400px; /* Fixed width for card */
+    }
+
+    /* Style for the error code */
+    .error-code {
+      font-size: 6rem; /* Large font size for prominence */
+      font-weight: bold;
+      color: #e74c3c; /* Bright red for visibility */
+      margin: 0;
+      animation: bounce 1s ease infinite; /* Bounce animation */
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* Style for the error message */
+    .error-message {
+      font-size: 1.25rem; /* Slightly larger text for readability */
+      color: #333; /* Dark text color for contrast */
+      margin: 10px 0; /* Vertical spacing around the message */
+    }
+
+    /* Style for the button/link */
+    .home-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px; /* Padding for button-like appearance */
+      font-size: 1.1rem; /* Slightly larger text for the button */
+      color: #fff; /* White text color */
+      background-color: #3498db; /* Vibrant blue background */
+      text-decoration: none; /* Remove underline from link */
+      border-radius: 5px; /* Rounded corners for button */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+      transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    }
+
+    .home-link:hover {
+      background-color: #2980b9; /* Darker blue on hover */
+      transform: translateY(-2px); /* Slight lift effect on hover */
+    }
+
+    .home-link:active {
+      transform: translateY(1px); /* Slight press effect */
+    }
+
+    /* Style for the warning icon */
+    .icon {
+      font-size: 5rem; /* Large icon for visibility */
+      color: #e74c3c; /* Red color to match the error code */
+      margin-bottom: 20px; /* Spacing below the icon */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Warning icon with a simple, clear design -->
+    <div class="icon">&#9888;</div> <!-- Unicode warning symbol -->
+    
+    <!-- Display the error code -->
+    <h1 class="error-code">404</h1>
+    
+    <!-- Display a user-friendly error message -->
+    <p class="error-message">Oops! The account you're looking for doesn't exist.</p>
+    
+    <!-- Link to navigate back to the homepage -->
+    <a href="cats" class="home-link">Back to Home</a>
+  </div>
+</body>
+</html>

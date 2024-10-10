@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quora Posts</title>
+
+    <!-- Link to Favicon (favicon in PNG format) -->
+    <link rel="icon" href="./favicon.png" type="image/png">
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <!-- Container for all posts -->
+    <div class="post-container">
+        <h1>Edit your Quora Posts</h1>
+            <div class="post">
+                <form action="/posts" method="post">
+                    <input placeholder="Enter username" type="text" name="username" required> <br> <br>
+                    <textarea rows="5" cols="50" name="content" placeholder="Write your post here.." required></textarea> <br>
+                    <button type="submit">Submit Post</button>
+                </form>
+            </div>
+    </div>
+
+</body>
+</html>

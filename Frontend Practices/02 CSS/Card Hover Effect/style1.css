@@ -1,0 +1,32 @@
+.card{
+    border: 2px solid black;
+    width: 200px;
+    height: fit-content;
+    display: inline-block;
+    border-radius: 5px;
+    margin: 10px;
+    box-shadow: 0px 4px 8px;
+    transition: 0.5s;
+}
+
+.card:hover{
+    box-shadow: 0px 8px 16px goldenrod;
+
+}
+
+p{
+    margin-bottom: 2%;
+}
+
+.desc{
+    padding: 0px 2px 0px 2px;
+    font-size: large;
+}
+
+img{
+    width: inherit;
+}
+
+input{
+    display: block;
+}

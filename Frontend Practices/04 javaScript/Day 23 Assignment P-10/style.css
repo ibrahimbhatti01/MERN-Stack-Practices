@@ -1,0 +1,22 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* .box{
+    width: 80%;
+    margin: 30px auto;
+    border: 1px solid #b26e6e;
+    border-radius: 10px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+.box input{
+    margin: 5px;
+} */

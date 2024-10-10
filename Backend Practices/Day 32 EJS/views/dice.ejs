@@ -1,0 +1,12 @@
+<%- include("includes/head.ejs") %> <!-- Include head section from external file for consistent page layout -->
+
+<body>
+    
+    <h1>Dice Gave: <%= diceVal %></h1> <!-- Display the result of the dice roll dynamically -->
+
+    <% if (diceVal == 6) { %> <!-- Check if the dice value is 6 -->
+    <h2>V. Nice Roll it Again!</h2> <!-- Display a special message if the dice value is 6 -->
+    <% } %> <!-- End of conditional statement -->
+
+</body>
+</html>

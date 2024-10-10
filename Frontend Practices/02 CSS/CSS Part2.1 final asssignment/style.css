@@ -1,0 +1,43 @@
+/* Using Selectors */
+
+#mainTopic{
+    color: blue;
+}
+
+*{
+    text-align: center;
+}
+
+h1,h3,h5{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.paras{
+    color: white;
+    background-color: cornflowerblue;
+}
+
+div > button{
+    background-color: purple;
+    color: azure;
+}
+
+/* (Using Pseduo class & elements) */
+
+button:hover{
+    background-color: yellow;
+    color: blue;
+}
+
+p:nth-of-type(odd){
+    color: yellow;
+}
+
+h1::first-letter{
+    color: red;
+}
+
+input[type="checkbox"]:checked + label{
+    color: darkgreen;
+    font-weight: bolder;
+}

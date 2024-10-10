@@ -1,0 +1,41 @@
+.card{
+    height: 200px;
+    width: 200px;
+    border: 2px solid black;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 0px 3px 6px black;
+    margin: 5px;
+    transition: 0.3s all;
+    text-align: center;
+}
+
+.card:hover{
+    box-shadow: 0px 6px 12px black;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+    padding: 10px 50px 0 50px;
+}
+
+#manimg{
+    /* background-image: url(manbg.jpg);
+    background-size: auto; */
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: #c760e3ab;
+}
+
+#womenimg{
+    /* background-image: url(womenbg.jpg);
+    background-size: cover; */
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: #35ddecea;
+}
+
+.desc{
+    padding: 0 0 0 2px;
+}

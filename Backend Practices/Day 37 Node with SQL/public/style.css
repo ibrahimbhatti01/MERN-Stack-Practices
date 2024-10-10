@@ -1,0 +1,10 @@
+*{
+    background-color: rgba(0, 0, 0, 0.945);
+    color: rgb(227, 244, 240);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table, th, tr, td{
+    border: 3px solid rgba(255, 247, 247, 0.476);
+    border-collapse: collapse;
+}
