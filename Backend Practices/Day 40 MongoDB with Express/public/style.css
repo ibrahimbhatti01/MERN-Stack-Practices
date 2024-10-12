@@ -1,0 +1,24 @@
+body{
+    margin-left: 20px;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.chat{
+    background-color: aliceblue;
+    border-radius: 16px;
+    padding: 5px 15px;
+    display: inline-block;
+    width: 50%;
+}
+
+.message{
+    background-color: #049a7e;
+    color: #fef8f8;
+    padding: 5px 15px;
+    border-radius: 16px;
+}
