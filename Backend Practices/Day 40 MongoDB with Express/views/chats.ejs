@@ -13,13 +13,15 @@
     <div class="chat-container">
         <% for(chat of chats){ %>
             <div class="chat"> 
-                <p>From: <i><%= chat.from %></i></p>
+                <p class="p">From: <i><%= chat.from %></i></p>
                 <div class="message">
-                    <p><%= chat.message %></p>
+                    <p class="p"><%= chat.message %></p>
                 </div>
-                <p>Received by <i><%= chat.to %></i></p>
-            </div>
+                <p class="p">Received by <i><%= chat.to %></i></p>
             <hr>
+                <p><%= chat.createdAt.toString().split(" ")[4] %></p>
+                <p><%= chat.createdAt.toString().split(" ").slice(0, 4).join(" ") %></p>
+            </div>
         <% } %>
     </div>
 </body>

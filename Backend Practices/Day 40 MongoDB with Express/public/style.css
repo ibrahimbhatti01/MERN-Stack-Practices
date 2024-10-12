@@ -26,18 +26,21 @@ body{
     border: 1px solid #ddd; /* Light border for chat messages */
     border-radius: 5px; /* Rounded corners */
     padding: 15px; /* Padding for inner content */
-    margin: 10px; /* Space between chats */
+    margin: 5px; /* Space between chats */
     opacity: 0; /* Start invisible */
     transform: translateY(20px); /* Start slightly down */
     animation: fadeInUp 0.5s forwards; /* Animation applied */
 }
 
+.chat .p{
+    margin: 10px 0;
+}
+
 .message{
     background-color: #049a7e;
     color: #fef8f8;
-    padding: 5px 15px;
+    padding: 2px 15px;
     border-radius: 16px;
-    margin: 10px 0px;
 }
 
 .chat-container {
