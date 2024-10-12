@@ -16,6 +16,29 @@
                 <p class="p">From: <i><%= chat.from %></i></p>
                 <div class="message">
                     <p class="p"><%= chat.message %></p>
+                    
+                    <!-- <form action="/chats/<%= chat._id %>/delete?_method=DELETE" method="post">
+                        <button type="submit">Delete</button>
+                    </form> -->
+                </div>
+
+                <form action="/chats/<%= chat._id %>/edit" method="get">
+                    <button class="edit-button" type="submit">Edit</button>
+                </form>
+
+                <!-- Checkbox to control modal visibility -->
+                <input type="checkbox" id="delete-confirm-<%= chat._id %>" class="delete-confirm-checkbox" />
+                <label for="delete-confirm-<%= chat._id %>" class="delete-button">Delete</label>
+
+                    <!-- Modal -->
+                <div class="modal">
+                    <div class="modal-content">
+                        <p>Are you sure you want to delete this message?</p>
+                        <form action="/chats/<%= chat._id %>/delete?_method=DELETE" method="post">
+                            <button type="submit">Yes, delete</button>
+                        </form>
+                        <label for="delete-confirm-<%= chat._id %>">Cancel</label>
+                    </div>
                 </div>
                 <p class="p">Received by <i><%= chat.to %></i></p>
             <hr>

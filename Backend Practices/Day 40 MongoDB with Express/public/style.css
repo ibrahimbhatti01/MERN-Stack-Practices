@@ -65,3 +65,73 @@ body{
 .chat:nth-child(1) { animation-delay: 0s; }
 .chat:nth-child(2) { animation-delay: 0.1s; }
 /* Continue for more chats as needed */
+
+
+
+/* Hidden checkbox */
+.delete-confirm-checkbox {
+    display: none;
+}
+
+/* Delete button styles */
+.delete-button {
+    color: red;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+/* Show the modal when the checkbox is checked */
+.delete-confirm-checkbox:checked ~ .modal {
+    display: block; /* Show modal */
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+}
+
+.modal-content button {
+    margin-right: 10px;
+}
+
+.edit-button {
+    background-color: transparent; /* Transparent background */
+    border: none; /* No border */
+    color: #007BFF; /* A nice blue color */
+    font-size: 14px; /* Adjust font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-decoration: underline; /* Underlined text */
+    padding: 5px; /* Padding for spacing */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.edit-button:hover {
+    color: #0056b3; /* Darker shade on hover */
+}
+
+.edit-button:focus {
+    outline: none; /* Remove outline on focus */
+}
+
