@@ -114,6 +114,7 @@ body{
 
 .modal-content button {
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .edit-button {
