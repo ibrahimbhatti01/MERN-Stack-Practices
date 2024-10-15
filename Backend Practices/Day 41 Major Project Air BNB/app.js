@@ -6,8 +6,7 @@ const Listing = require("./models/listing.js");
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-app.use(express.urlencoded({extended: true}));
-
+app.use(express.urlencoded({ extended: true }));
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 async function main() {
@@ -25,14 +24,27 @@ app.get("/", (req, res) => {
 // Index Route
 app.get("/listings", async (req, res) => {
   const allListings = await Listing.find({});
-  res.render("./listings/index.ejs", {allListings});
+  res.render("./listings/index.ejs", { allListings });
 });
 
 // Show Route
 app.get("/show/:id", async (req, res) => {
-  let {id} = req.params;
+  let { id } = req.params;
   let listing = await Listing.findById(id);
-  res.render("./listings/show.ejs", {listing});
+  res.render("./listings/show.ejs", { listing });
+});
+
+// New Route
+app.get("/listings/new", (req, res) => {
+  res.render("./listings/new.ejs");
+});
+
+// Create Route
+app.post("/listings", async (req, res) => {
+  // let {title, description, image, price, country, location} = req.body;
+  const newListing = new Listing(req.body.listing);
+  await newListing.save();
+  res.redirect("/listings");
 });
 
 app.listen("8080", () => {
