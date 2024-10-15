@@ -1,25 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WanderLust</title>
-  </head>
-  <body>
-    <h1>Listing Details</h1>
-    <ul>
-      <li><%= listing.title %></li>
-      <li><%= listing.description %></li>
-      <li>
-        &#x20A8; <%= listing.price.toLocaleString("en-PK").concat(".00") %>
-      </li>
-      <li><%= listing.location %></li>
-      <li><%= listing.country %></li>
-    </ul>
-    <a href="/listings/<%= listing._id %>/edit">Edit</a>
-    <br><br>
-    <form action="/listings/<%= listing.id %>/delete?_method=DELETE" method="post">
-      <button type="submit">Delete this listing</button>
-    </form>
-  </body>
-</html>
+<%- layout('/layouts/boilerplate') %>
+<body>
+  <h1>Listing Details</h1>
+  <ul>
+    <li><%= listing.title %></li>
+    <li><%= listing.description %></li>
+    <li>&#x20A8; <%= listing.price.toLocaleString("en-PK").concat(".00") %></li>
+    <li><%= listing.location %></li>
+    <li><%= listing.country %></li>
+  </ul>
+  <a href="/listings/<%= listing._id %>/edit">Edit</a>
+  <br /><br />
+  <form
+    action="/listings/<%= listing.id %>/delete?_method=DELETE"
+    method="post"
+  >
+    <button type="submit">Delete this listing</button>
+  </form>
+</body>

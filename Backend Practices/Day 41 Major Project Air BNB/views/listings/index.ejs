@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WanderLust</title>
-</head>
+<% layout('./layouts/boilerplate.ejs') %>
 <body>
-    <h1>All listings</h1>
-    <form action="/listings/new" method="get">
-        <button type="submit">Create new listing</button>
-    </form>
-    <% for(listing of allListings) { %>
-        <ul>
-            <li><a href="/show/<%= listing._id %>"><%= listing.title %></a></li>
-        </ul>
-    <% } %>
+  <h1>All listings</h1>
+  <form action="/listings/new" method="get">
+    <button type="submit">Create new listing</button>
+  </form>
+  <% for(listing of allListings) { %>
+  <ul>
+    <li><a href="/show/<%= listing._id %>"><%= listing.title %></a></li>
+  </ul>
+  <% } %>
 </body>
-</html>
