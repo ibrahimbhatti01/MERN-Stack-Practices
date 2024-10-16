@@ -4,9 +4,25 @@
   <!-- <form action="/listings/new" method="get">
     <button type="submit">Create new listing</button>
   </form> -->
-  <% for(listing of allListings) { %>
-  <ul>
-    <li><a href="/show/<%= listing._id %>"><%= listing.title %></a></li>
-  </ul>
-  <% } %>
+  <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2">
+    <% for(listing of allListings) { %>
+    <a class="card-embed" href="/show/<%= listing._id %>">
+      <div class="card col">
+        <img
+          src="<%= listing.image.url %>"
+          class="card-img-top"
+          alt="image"
+          style="height: 16rem"
+        />
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <p class="card-text"><b><%= listing.title %></b></p>
+          <p class="card-text">
+            &#x20A8; <%= listing.price.toLocaleString("en-PK").concat(".00") %>
+          </p>
+        </div>
+      </div>
+    </a>
+    <% } %>
+  </div>
 </body>
