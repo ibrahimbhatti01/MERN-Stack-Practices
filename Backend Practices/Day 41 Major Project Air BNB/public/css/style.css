@@ -8,6 +8,42 @@
   font-size: 2rem;
 }
 
-.navbar-nav {
-  color: #222 !important;
+.nav-link {
+  color: #222222 !important;
+}
+
+.f-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #f7f7f7;
+  height: 8rem;
+}
+
+.f-info-socials,
+.f-info-links,
+.f-info-policies {
+  text-align: center;
+  width: 100%;
+}
+
+.f-info-socials i {
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-right: 0.8rem;
+  color: #222222 !important;
+}
+
+.f-info-policies a {
+  text-decoration: none;
+  color: #222222;
+}
+
+.f-info-policies a:hover {
+  text-decoration: underline;
+}
+
+.f-info-policies img {
+  width: 25px;
 }
