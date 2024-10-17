@@ -4,6 +4,7 @@ body {
   min-height: 100vh;
   font-family: "Plus Jakarta Sans", sans-serif !important;
   font-optical-sizing: auto;
+  background-color: #222222a4 !important;
 }
 
 .container {
@@ -90,8 +91,8 @@ body {
   background-color: #f7f7f7;
 }
 
-.btn-new-listing {
+.new-btn,
+.edit-btn {
   background-color: #ff385c !important;
   border: none !important;
-  width: 5rem;
 }
