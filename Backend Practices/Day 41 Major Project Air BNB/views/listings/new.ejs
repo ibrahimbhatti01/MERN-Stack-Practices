@@ -1,53 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WanderLust</title>
-  </head>
-  <body>
-    <h1>Add new listing</h1>
-    <form action="/listings" method="post">
-      <input
-        type="text"
-        name="listing[title]"
-        placeholder="enter title"
-        required
-      />
-      <br /><br />
-      <textarea
-        name="listing[description]"
-        placeholder="enter description"
-        required
-      ></textarea>
-      <br /><br />
-      <input
-        name="listing[image][url]"
-        placeholder="enter image URL/Link"
-      />
-      <br /><br />
-      <input
-        type="number"
-        name="listing[price]"
-        placeholder="enter price"
-        required
-      />
-      <br /><br />
-      <input
-        type="text"
-        name="listing[country]"
-        placeholder="enter country"
-        required
-      />
-      <br /><br />
-      <input
-        type="text"
-        name="listing[location]"
-        placeholder="enter location"
-        required
-      />
-      <br /><br />
-      <button type="submit">Add</button>
-    </form>
-  </body>
-</html>
+<% layout('./layouts/boilerplate.ejs') %>
+<body>
+  <div class="row offset-2">
+    <div class="col-10">
+      <h1>Create new listing</h1>
+      <form action="/listings" method="post">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            class="form-control"
+            id="title"
+            type="text"
+            name="listing[title]"
+            placeholder="Villa Near Seashore"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea
+            class="form-control"
+            id="description"
+            name="listing[description]"
+            placeholder="This is a sweet place to stay"
+            required
+          ></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="image-url" class="form-label">Image URL</label>
+          <input
+            class="form-control"
+            id="image-url"
+            name="listing[image][url]"
+            placeholder="https://www.434234234fsdfw23rfr"
+          />
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input
+              class="form-control"
+              id="price"
+              type="number"
+              name="listing[price]"
+              placeholder="5699"
+              required
+            />
+          </div>
+
+          <div class="col-md-8 mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input
+              class="form-control"
+              id="country"
+              type="text"
+              name="listing[country]"
+              placeholder="Pakistan"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="location" class="form-label">Location</label>
+          <input
+            class="form-control"
+            id="location"
+            type="text"
+            name="listing[location]"
+            placeholder="Kemari, Karachi"
+            required
+          />
+        </div>
+
+        <button class="btn btn-dark btn-new-listing" type="submit">Add</button>
+      </form>
+    </div>
+  </div>
+</body>
