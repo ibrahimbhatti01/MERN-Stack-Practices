@@ -41,28 +41,30 @@
           />
         </div>
 
-        <div class="mb-3">
-          <label for="price" class="form-label">Price</label>
-          <input
-            id="price"
-            class="form-control"
-            type="number"
-            value="<%= listing.price %>"
-            name="listing[price]"
-            placeholder="enter new price"
-          />
-        </div>
+        <div class="row">
+          <div class="mb-3 col-md-4">
+            <label for="price" class="form-label">Price</label>
+            <input
+              id="price"
+              class="form-control"
+              type="number"
+              value="<%= listing.price %>"
+              name="listing[price]"
+              placeholder="enter new price"
+            />
+          </div>
 
-        <div class="mb-3">
-          <label for="country" class="form-label">Country</label>
-          <input
-            id="country"
-            class="form-control"
-            type="text"
-            value="<%= listing.country %>"
-            name="listing[country]"
-            placeholder="enter new country"
-          />
+          <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">Country</label>
+            <input
+              id="country"
+              class="form-control"
+              type="text"
+              value="<%= listing.country %>"
+              name="listing[country]"
+              placeholder="enter new country"
+            />
+          </div>
         </div>
 
         <div class="mb-3">

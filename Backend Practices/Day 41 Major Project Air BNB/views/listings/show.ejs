@@ -1,19 +1,40 @@
 <%- layout('/layouts/boilerplate') %>
 <body>
-  <h1>Listing Details</h1>
-  <ul>
-    <li><%= listing.title %></li>
-    <li><%= listing.description %></li>
-    <li>&#x20A8; <%= listing.price.toLocaleString("en-PK").concat(".00") %></li>
-    <li><%= listing.location %></li>
-    <li><%= listing.country %></li>
-  </ul>
-  <a href="/listings/<%= listing._id %>/edit">Edit</a>
-  <br /><br />
-  <form
-    action="/listings/<%= listing.id %>/delete?_method=DELETE"
-    method="post"
-  >
-    <button type="submit">Delete this listing</button>
-  </form>
+  <div class="show-container row">
+    <div class="show-heading col-8 offset-2">
+      <h1>Listing Details</h1>
+    </div>
+    <div class="col-8 offset-2 show-img mb-3">
+        <img
+          src="<%= listing.image.url %>"
+          class="card-img-top show-img"
+          alt="listing-image"
+        />
+    </div>
+    <div class="col-8 offset-2 card-container">
+        <div class="card-body">
+          <h5 class="card-title mb-3"><%= listing.title %></h5>
+          <p class="card-text mb-2"><%= listing.description %></p>
+          <p class="card-tex mb-2">
+            &#x20A8; <%= listing.price.toLocaleString("en-PK").concat(".00") %>
+          </p>
+          <p class="card-text mb-2"><%= listing.location %></p>
+          <p class="card-text mb-2"><%= listing.country %></p>
+          <a class="btn btn-primary mb-4" href="/listings/<%= listing._id %>/edit"
+            >Edit</a
+          >
+          <label for="delete-confirm-<%= listing._id %>" class="btn btn-outline-danger mb-4">Delete</label>
+          <input id="delete-confirm-<%= listing._id %>" type="checkbox" class="delete-confirm-checkbox">
+          <div class="modal">
+            <div class="modal-content">
+              <p class="mb-4">Are you sure you want to delete this listing?</p>
+                <form action="/listings/<%= listing._id %>/delete?_method=DELETE" method="post">
+                    <button type="submit" class="btn btn-outline-danger mb-3">Yes, delete</button>
+                </form>
+                <label for="delete-confirm-<%= listing._id %>" class="btn btn-success">Cancel</label>
+            </div>
+          </div></input>
+      </div>
+    </div>
+  </div>
 </body>
