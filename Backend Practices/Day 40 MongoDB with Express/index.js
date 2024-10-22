@@ -20,20 +20,22 @@ async function main() {
   await mongoose.connect("mongodb://127.0.0.1:27017/fakewhatsapp");
 }
 
+function wrapAsync(fn){
+  return function (req, res, next){
+    fn(req, res, next).catch(err => next(err));
+  };
+};
+
 // root
 app.get("/", (req, res) => {
   res.send("working fine");
 });
 
 // index route
-app.get("/chats", async (req, res, next) => {
-  try{
+app.get("/chats", wrapAsync(async (req, res, next) => {
  let chats = await Chat.find();
   res.render("chats.ejs", { chats });
-  }catch(err){
-    next(err);
-  }
-});
+}));
 
 // new route
 app.get("/chats/new", (req, res) => {
@@ -42,8 +44,7 @@ app.get("/chats/new", (req, res) => {
 });
 
 // create route
-app.post("/chats", async (req, res, next) => {
-  try{
+app.post("/chats", wrapAsync(async (req, res, next) => {
 let { from, to, message } = req.body;
   let newChat = new Chat({
     from: from,
@@ -53,14 +54,10 @@ let { from, to, message } = req.body;
   });
   await newChat.save();
   res.redirect("/chats");
-  }catch(err){
-    next(err);
-  }
-});
+}));
 
 // show route
-app.get("/chats/:id", async (req, res, next) => {
-  try{
+app.get("/chats/:id", wrapAsync(async (req, res, next) => {
     let { id } = req.params;
     let chat = await Chat.findById(id);
     // if(!chat){
@@ -68,25 +65,17 @@ app.get("/chats/:id", async (req, res, next) => {
     //   next(new ExpressError(404, "page not found")); //So, we've to do in this type
     // }
     res.render("show.ejs", { chat });
-  }catch(err){
-    next(err);
-  }
-});
+}));
 
 // edit route
-app.get("/chats/:id/edit", async (req, res, next) => {
-  try{
+app.get("/chats/:id/edit", wrapAsync(async (req, res, next) => {
       let { id } = req.params;
   let chat = await Chat.findById(id);
   res.render("edit.ejs", { chat });
-  }catch(err){
-    next(err);
-  }
-});
+}));
 
 // update route
-app.post("/chats/:id", async (req, res, next) => {
-  try{
+app.post("/chats/:id", wrapAsync(async (req, res, next) => {
     let { id } = req.params;
   let { message: newMessage } = req.body;
   let updatedChat = await Chat.findByIdAndUpdate(
@@ -101,21 +90,14 @@ app.post("/chats/:id", async (req, res, next) => {
   );
   console.log(updatedChat);
   res.redirect("/chats");
-  }catch(err){
-    next(err);
-  }
-});
+}));
 
 // delete route
-app.delete("/chats/:id/delete", async (req, res, next) => {
-  try{
+app.delete("/chats/:id/delete", wrapAsync(async (req, res, next) => {
   let { id } = req.params;
   let deleted = await Chat.findByIdAndDelete(id);
   res.redirect("/chats");
-  }catch(err){
-    next(err);
-  }
-});
+}));
 
 // Error handling middleware
 app.use((err, req, res, next) => {
