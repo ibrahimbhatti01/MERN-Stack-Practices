@@ -99,6 +99,20 @@ app.delete("/chats/:id/delete", wrapAsync(async (req, res, next) => {
   res.redirect("/chats");
 }));
 
+const handleValidationErr = (err) => {
+  console.log(err.message);
+  return err;
+};
+
+// custom errors handling
+app.use((err, req, res, next) => {
+  console.log(err.name);
+  if(err.name === "ValidationError"){
+    err = handleValidationErr(err);
+  }
+  next(err);
+})
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   let {status=500, message} = err;
