@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Whatsapp</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <form action="/chats/new" method="get">
@@ -21,6 +21,10 @@
                         <button type="submit">Delete</button>
                     </form> -->
                 </div>
+
+                <form action="/chats/<%= chat._id %>" method="get">
+                    <button class="show-button" type="submit">Show</button>
+                </form>
 
                 <form action="/chats/<%= chat._id %>/edit" method="get">
                     <button class="edit-button" type="submit">Edit</button>

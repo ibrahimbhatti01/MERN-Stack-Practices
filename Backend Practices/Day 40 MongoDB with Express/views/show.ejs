@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show message</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="chat"> 
+    <h3><u><i><%= chat.to %></u></i> have a new message from <i><u><%= chat.from %></u></i></h3>
+    <div class="message">
+            <p class="p"><%= chat.message %></p>
+            
+            <!-- <form action="/chats/<%= chat._id %>/delete?_method=DELETE" method="post">
+                <button type="submit">Delete</button>
+            </form> -->
+        </div>
+        </div>
+</body>
+</html>
