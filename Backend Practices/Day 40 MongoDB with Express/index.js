@@ -26,9 +26,13 @@ app.get("/", (req, res) => {
 });
 
 // index route
-app.get("/chats", async (req, res) => {
-  let chats = await Chat.find();
+app.get("/chats", async (req, res, next) => {
+  try{
+ let chats = await Chat.find();
   res.render("chats.ejs", { chats });
+  }catch(err){
+    next(err);
+  }
 });
 
 // new route
@@ -38,8 +42,9 @@ app.get("/chats/new", (req, res) => {
 });
 
 // create route
-app.post("/chats", async (req, res) => {
-  let { from, to, message } = req.body;
+app.post("/chats", async (req, res, next) => {
+  try{
+let { from, to, message } = req.body;
   let newChat = new Chat({
     from: from,
     message: message,
@@ -48,29 +53,41 @@ app.post("/chats", async (req, res) => {
   });
   await newChat.save();
   res.redirect("/chats");
+  }catch(err){
+    next(err);
+  }
 });
 
 // show route
 app.get("/chats/:id", async (req, res, next) => {
-  let { id } = req.params;
-  let chat = await Chat.findById(id);
-  if(!chat){
-    // throw new ExpressError(404, "page not found"); //in async funcyion express can't call next() on it's own.
-    next(new ExpressError(404, "page not found")); //So, we've to do in this type
+  try{
+    let { id } = req.params;
+    let chat = await Chat.findById(id);
+    // if(!chat){
+    //   // throw new ExpressError(404, "page not found"); //in async funcyion express can't call next() on it's own.
+    //   next(new ExpressError(404, "page not found")); //So, we've to do in this type
+    // }
+    res.render("show.ejs", { chat });
+  }catch(err){
+    next(err);
   }
-  res.render("show.ejs", { chat });
 });
 
 // edit route
-app.get("/chats/:id/edit", async (req, res) => {
-  let { id } = req.params;
+app.get("/chats/:id/edit", async (req, res, next) => {
+  try{
+      let { id } = req.params;
   let chat = await Chat.findById(id);
   res.render("edit.ejs", { chat });
+  }catch(err){
+    next(err);
+  }
 });
 
 // update route
-app.post("/chats/:id", async (req, res) => {
-  let { id } = req.params;
+app.post("/chats/:id", async (req, res, next) => {
+  try{
+    let { id } = req.params;
   let { message: newMessage } = req.body;
   let updatedChat = await Chat.findByIdAndUpdate(
     id,
@@ -84,13 +101,20 @@ app.post("/chats/:id", async (req, res) => {
   );
   console.log(updatedChat);
   res.redirect("/chats");
+  }catch(err){
+    next(err);
+  }
 });
 
 // delete route
-app.delete("/chats/:id/delete", async (req, res) => {
+app.delete("/chats/:id/delete", async (req, res, next) => {
+  try{
   let { id } = req.params;
   let deleted = await Chat.findByIdAndDelete(id);
   res.redirect("/chats");
+  }catch(err){
+    next(err);
+  }
 });
 
 // Error handling middleware
