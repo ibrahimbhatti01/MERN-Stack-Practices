@@ -18,7 +18,7 @@
         <div class="card-body">
           <p class="card-text"><b><%= listing.title %></b></p>
           <p class="card-text">
-            &#x20A8; <%= listing.price.toLocaleString("en-PK").concat(".00") %>
+            &#x20A8; <%= listing.price ? listing.price.toLocaleString("en-PK").concat(".00") : "Price not available" %>
           </p>
         </div>
       </div>

@@ -16,7 +16,6 @@ const imageSchema = new Schema({
 const listingSchema = new Schema({
   title: {
     type: String,
-    required: true
   },
   description: String,
   image: {

@@ -16,7 +16,7 @@
           <h5 class="card-title mb-3"><%= listing.title %></h5>
           <p class="card-text mb-2"><%= listing.description %></p>
           <p class="card-tex mb-2">
-            &#x20A8; <%= listing.price.toLocaleString("en-PK").concat(".00") %>
+            &#x20A8; <%= listing.price ? listing.price.toLocaleString("en-PK").concat(".00") : "Price not available" %>
           </p>
           <p class="card-text mb-2"><%= listing.location %></p>
           <p class="card-text mb-2"><%= listing.country %></p>
