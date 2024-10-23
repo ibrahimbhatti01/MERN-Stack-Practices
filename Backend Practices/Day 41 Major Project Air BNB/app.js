@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const Listing = require("./models/listing.js");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
+const wrapAsync = require("./utils/wrapAsync.js")
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -45,11 +46,16 @@ app.get("/listings/new", (req, res) => {
 });
 
 // Create Route
-app.post("/listings", async (req, res) => {
-  // let {title, description, image, price, country, location} = req.body;
+app.post("/listings", async (req, res, next) => {
+  try{
+    // let {title, description, image, price, country, location} = req.body;
   const newListing = new Listing(req.body.listing);
   await newListing.save();
   res.redirect("/listings");
+  }catch(err){
+    next(err);
+  }
+  
 });
 
 //Edit Route
@@ -73,6 +79,10 @@ app.delete("/listings/:id/delete", async (req, res) => {
   const deletedListing = await Listing.findByIdAndDelete(id);
   console.log(deletedListing);
   res.redirect("/listings");
+});
+
+app.use((err, req, res, next) => {
+  res.send("Something went wrong");
 });
 
 app.listen("8080", () => {
