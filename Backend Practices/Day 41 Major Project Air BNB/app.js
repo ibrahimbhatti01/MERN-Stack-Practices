@@ -46,17 +46,12 @@ app.get("/listings/new", (req, res) => {
 });
 
 // Create Route
-app.post("/listings", async (req, res, next) => {
-  try{
+app.post("/listings", wrapAsync(async (req, res, next) => {
     // let {title, description, image, price, country, location} = req.body;
   const newListing = new Listing(req.body.listing);
   await newListing.save();
   res.redirect("/listings");
-  }catch(err){
-    next(err);
-  }
-  
-});
+}));
 
 //Edit Route
 app.get("/listings/:id/edit", async (req, res) => {
