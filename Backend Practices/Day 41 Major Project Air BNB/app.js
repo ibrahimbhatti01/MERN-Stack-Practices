@@ -48,7 +48,11 @@ app.get("/listings/new", (req, res) => {
 
 // Create Route
 app.post("/listings", wrapAsync(async (req, res, next) => {
-  // let {title, description, image, price, country, location} = req.body;
+    // For third party errors, Hoppscotch
+  if(!req.body.listing){
+    throw new ExpressError(400, "Bad Request");
+  };
+    // let {title, description, image, price, country, location} = req.body;
   const newListing = new Listing(req.body.listing);
   await newListing.save();
   res.redirect("/listings");
@@ -63,6 +67,10 @@ app.get("/listings/:id/edit", wrapAsync(async (req, res) => {
 
 //Update Route
 app.put("/listings/:id", wrapAsync(async (req, res) => {
+    // For third party errors, Hoppscotch
+  if(!req.body.listing){
+    throw new ExpressError(400, "Bad Request");
+  };
   let { id } = req.params;
   await Listing.findByIdAndUpdate(id, { ...req.body.listing });
   console.log(req.body.listing);
@@ -84,7 +92,7 @@ app.all("*", (req, res, next) => {
 // Error handling middleware
 app.use((err, req, res, next) => {
   let {statusCode = 500, message = "Something went wrong!"} = err;
-  res.status(statusCode).send(message);
+  res.status(statusCode).render("./listings/error.ejs", {message});
 });
 
 app.listen("8080", () => {
