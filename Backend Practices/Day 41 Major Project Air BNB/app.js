@@ -7,6 +7,8 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
+const {listingSchema} = require("./schema.js");
+
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -48,9 +50,10 @@ app.get("/listings/new", (req, res) => {
 
 // Create Route
 app.post("/listings", wrapAsync(async (req, res, next) => {
-    // For third party errors, Hoppscotch
-  if(!req.body.listing){
-    throw new ExpressError(400, "Bad Request");
+  let result = listingSchema.validate(req.body);
+  console.log(result);
+  if(result.error){
+    throw new ExpressError(400, result.error);
   };
     // let {title, description, image, price, country, location} = req.body;
   const newListing = new Listing(req.body.listing);
