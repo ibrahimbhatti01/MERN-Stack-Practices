@@ -25,22 +25,29 @@ const customerSchema = new Schema({
 const Order = mongoose.model("Order", orderSchema);
 const Customer = mongoose.model("Customer", customerSchema);
 
-const addCustomer = async () => {
-    let customer1 = new Customer({
-        name: "ibrahim",
-    })
+// const addCustomer = async () => {
+//     let customer1 = new Customer({
+//         name: "ibrahim",
+//     });
 
-    let order1 = await Order.findOne({item: "Chips"});
-    let order2 = await Order.findOne({item: "Wrapsta"});
+//     let order1 = await Order.findOne({item: "Chips"});
+//     let order2 = await Order.findOne({item: "Wrapsta"});
 
-    customer1.orders.push(order1);
-    customer1.orders.push(order2);
+//     customer1.orders.push(order1);
+//     customer1.orders.push(order2);
 
-    let result = await customer1.save();
+//     let result = await customer1.save();
+//     console.log(result);
+// };
+
+// addCustomer();
+
+const findCustomer = async () => {
+    let result = await Order.find({})
     console.log(result);
-}
+};
 
-addCustomer()
+findCustomer();
 
 // const addOrder = async () => {
 //     let result = await Order.insertMany(
