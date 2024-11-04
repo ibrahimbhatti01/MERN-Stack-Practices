@@ -43,8 +43,8 @@ const Customer = mongoose.model("Customer", customerSchema);
 // addCustomer();
 
 const findCustomer = async () => {
-    let result = await Order.find({})
-    console.log(result);
+    let result = await Customer.find({}).populate("orders")
+    console.log(result[0]);
 };
 
 findCustomer();
