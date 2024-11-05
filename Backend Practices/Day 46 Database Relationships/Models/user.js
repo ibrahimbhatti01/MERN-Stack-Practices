@@ -9,6 +9,7 @@ async function main() {
   await mongoose.connect('mongodb://127.0.0.1:27017/relationDemo');
 };
 
+// One to few || Approach 01 || Nested Schema || For -Uber -Cream ...
 const userSchema = new Schema({
     username: String,
     addresses: [

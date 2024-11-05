@@ -14,6 +14,7 @@ const orderSchema = new Schema({
         Price: Number,
     });
 
+// One to many || Approach 02 || Reference to the cild inside parent || For -Restaurant -Food app ...
 const customerSchema = new Schema({
     name: String,
     orders: [{
