@@ -2,7 +2,7 @@
 <body>
   <div class="show-container row">
     <div class="show-heading col-8 offset-2">
-      <h1>Listing Details</h1>
+      <h1 class="mt-2"><%= listing.title %></h1>
     </div>
     <div class="col-8 offset-2 show-img mb-3">
         <img
@@ -13,7 +13,6 @@
     </div>
     <div class="col-8 offset-2 card-container">
         <div class="card-body">
-          <h5 class="card-title mb-3"><%= listing.title %></h5>
           <p class="card-text mb-2"><%= listing.description %></p>
           <p class="card-tex mb-2">
             &#x20A8; <%= listing.price ? listing.price.toLocaleString("en-PK").concat(".00") : "Price not available" %>
