@@ -23,51 +23,56 @@ const customerSchema = new Schema({
     }]
 });
 
+
+// customerSchema.pre("findOneAndDelete", async (data) => {
+//     console.log(data);
+// });
+
+customerSchema.post("findOneAndDelete", async (customer) => {
+    if(customer.orders.length){
+       let result = await Order.deleteMany({_id: {$in: customer.orders}})
+       console.log(result);
+    }
+})
+
 const Order = mongoose.model("Order", orderSchema);
 const Customer = mongoose.model("Customer", customerSchema);
 
-// const addCustomer = async () => {
-//     let customer1 = new Customer({
-//         name: "ibrahim",
-//     });
 
-//     let order1 = await Order.findOne({item: "Chips"});
-//     let order2 = await Order.findOne({item: "Wrapsta"});
+// Functions
 
-//     customer1.orders.push(order1);
-//     customer1.orders.push(order2);
-
-//     let result = await customer1.save();
+// const findCustomer = async () => {
+//     let result = await Customer.find({}).populate("orders")
 //     console.log(result);
 // };
 
-// addCustomer();
+// findCustomer();
 
-const findCustomer = async () => {
-    let result = await Customer.find({}).populate("orders")
-    console.log(result[0]);
+
+const addData = async () => {
+    let customer = new Customer({
+        name: "Noman Afzal"
+    });
+
+    let order = new Order({
+        item: "Burger",
+        Price: "150"
+    });
+
+    customer.orders.push(order);
+
+    await customer.save();
+    await order.save();
+
+    console.log("added new customer");
 };
 
-findCustomer();
+// addData();
 
-// const addOrder = async () => {
-//     let result = await Order.insertMany(
-//         [
-//             {
-//                 item: "Chips",
-//                 Price: 50
-//             },
-//             {
-//                 item: "Wrapsta",
-//                 Price: 170
-//             },
-//             {
-//                 item: "Peppricorn",
-//                 Price: 350
-//             }
-//         ]
-//     );
-//     console.log(result);
-// };
 
-// addOrder();
+const delCustomer = async () => {
+    let data = await Customer.findByIdAndDelete("Put _id here !!");
+    console.log("deleted");
+};
+
+// delCustomer();
