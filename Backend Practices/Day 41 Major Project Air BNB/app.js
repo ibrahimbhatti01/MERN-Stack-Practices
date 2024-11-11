@@ -27,9 +27,9 @@ main()
   .then((res) => console.log("Connection Successful"))
   .catch((err) => console.log(err));
 
-app.get("/", (req, res) => {
-  res.send("I'm your root, Baby !!");
-});
+// app.get("/", (req, res) => {
+//   res.send("I'm your root, Baby !!");
+// });
 
 const validateListing = (req, res, next) => {
   let {error} = listingSchema.validate(req.body);
@@ -52,7 +52,7 @@ const validateReview = (req, res, next) => {
 };
 
 // Index Route
-app.get("/listings", wrapAsync(async (req, res) => {
+app.get("/", wrapAsync(async (req, res) => {
   const allListings = await Listing.find({});
   res.render("./listings/index.ejs", { allListings });
 }));
