@@ -57,13 +57,6 @@ app.get("/listings", wrapAsync(async (req, res) => {
   res.render("./listings/index.ejs", { allListings });
 }));
 
-// Show Route
-app.get("/show/:id", wrapAsync(async (req, res) => {
-  let { id } = req.params;
-  let listing = await Listing.findById(id);
-  res.render("./listings/show.ejs", { listing });
-}));
-
 // New Route
 app.get("/listings/new", (req, res) => {
   res.render("./listings/new.ejs");
@@ -71,10 +64,17 @@ app.get("/listings/new", (req, res) => {
 
 // Create Route
 app.post("/listings", validateListing, wrapAsync(async (req, res, next) => {
-    // let {title, description, image, price, country, location} = req.body;
-  const newListing = new Listing(req.body.listing);
-  await newListing.save();
-  res.redirect("/listings");
+  // let {title, description, image, price, country, location} = req.body;
+const newListing = new Listing(req.body.listing);
+await newListing.save();
+res.redirect("/listings");
+}));
+
+// Show Route
+app.get("/listings/:id", wrapAsync(async (req, res) => {
+  let { id } = req.params;
+  let listing = await Listing.findById(id).populate("review");
+  res.render("./listings/show.ejs", { listing });
 }));
 
 //Edit Route
@@ -115,7 +115,7 @@ app.post("/listings/:id/reviews", validateReview, wrapAsync(async (req, res) => 
   await newReview.save();
   await listing.save();
 
-  res.send("new review saved");
+  res.redirect(`/listings/${listing._id}`);
 }))
 
 app.all("*", (req, res, next) => {
