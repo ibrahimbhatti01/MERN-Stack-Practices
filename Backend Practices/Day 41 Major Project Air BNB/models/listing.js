@@ -19,16 +19,18 @@ const listingSchema = new Schema({
   },
   description: String,
   image: {
+    _id: false,
     type: imageSchema, // Use the image schema as a type
     default: () => ({}) // Provide a default empty object
   },
   price: Number,
   location: String,
   country: String,
-  review: {
+  review: [
+    {
     type: Schema.Types.ObjectId,
     ref: "Review"
-  }
+  }]
 });
 
 const Listing = mongoose.model("Listing", listingSchema);
