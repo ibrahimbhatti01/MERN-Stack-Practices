@@ -4,7 +4,7 @@ const Review = require("../models/review.js");
 const Listing = require("../models/listing.js");
 const wrapAsync = require("../utils/wrapAsync.js");
 const ExpressError = require("../utils/ExpressError.js");
-const {listingSchema, reviewSchema} = require("../schema.js");
+const {reviewSchema} = require("../schema.js");
 
 const validateReview = (req, res, next) => {
     let {error} = reviewSchema.validate(req.body);
