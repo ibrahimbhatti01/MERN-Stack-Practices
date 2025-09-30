@@ -185,3 +185,30 @@
 // let nameArr = [...name];
 
 // console.log(nameArr);
+
+
+
+
+// spread with object literals
+
+// let obj = {
+//     name: "bahir likha h",
+//     age: "temporary h",
+//     language: "code ki"
+// }
+
+// let copyObj = {...obj, culture: "desi h"};
+
+// console.log(copyObj);
+
+
+// let name = "pta ni";
+// let objStr = {...name};
+// console.log(objStr);
+
+
+// let nums = [1,2,3,4,5];
+// let obj = {...nums};
+// console.log(obj);
+
+
