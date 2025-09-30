@@ -46,6 +46,7 @@
 
 
 
+
 // let array = [1, 2, 3, 4, 5];
 
 // let doubleArr = array.map((element) => {
@@ -54,3 +55,29 @@
 // })
 
 // console.log(doubleArr);
+
+
+
+
+// let students = [{
+//     name: "ali",
+//     marks: 90
+// }, {
+//     name: "salma",
+//     marks: 43
+// }, {
+//     name: "noreen",
+//     marks: 65
+// }, {
+//     name: "hassan",
+//     marks: 87
+// }];
+
+// let highAchievers = students.filter((student) =>{
+//     if(student.marks > 85){
+//         console.log(student);
+//         return true;
+//     }
+// })
+
+// console.log(highAchievers);
