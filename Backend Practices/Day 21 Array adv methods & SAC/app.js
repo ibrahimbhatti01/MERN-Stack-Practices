@@ -213,21 +213,34 @@
 
 
 
-//we can add infinite nums using this func cause of Rest(...nameOfArgumentsArray)
-function sum(...args){
-    return args.reduce((acc, el) => acc+el);
-}
+// //we can add infinite nums using this func cause of Rest(...nameOfArgumentsArray)
+// function sum(...args){
+//     return args.reduce((acc, el) => acc+el);
+// }
 
-//args is an array of incoming arguments(can be infinite-1)
-function multiply(...args){
-    return args.reduce((res, el) => res*el);
-}
+// //args is an array of incoming arguments(can be infinite-1)
+// function multiply(...args){
+//     return args.reduce((res, el) => res*el);
+// }
 
-function min(...argumentsArray){
-    return argumentsArray.reduce((min, el) => el < min ? el : min);
-}
+// function min(...argumentsArray){
+//     return argumentsArray.reduce((min, el) => el < min ? el : min);
+// }
 
-function max(...argsArray){
-    return argsArray.reduce((max, el) => el > max ? el : max);
-}
+// function max(...argsArray){
+//     return argsArray.reduce((max, el) => el > max ? el : max);
+// }
 
+
+
+
+// Destructing objects
+
+// let student = {
+//     name: "ibrahim",
+//     age: 21,
+//     lang: "en",
+//     address: ["nai abadi", "sahiwal"]
+// }
+
+// let {name, age, location: city = "Sahiwal", ...others} = student;
