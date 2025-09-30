@@ -244,3 +244,83 @@
 // }
 
 // let {name, age, location: city = "Sahiwal", ...others} = student;
+
+
+
+
+
+//// problem 01
+////Square and sum the array elements using the arrow function and then find the
+//// average of the array.
+
+// let arr = [1,2,3,4,5,8]
+// let sqSum = (arr) => {
+//     return arr.reduce((sqSum, el) => sqSum + (el*el));
+// }
+
+// let avg = sqSum(arr)/arr.length;
+
+// console.log(avg);
+
+
+
+// // problem 02
+////Create a new array using the map function whose each element is equal to the original element plus 5.
+
+// let original = [1,2,3,4,-1];
+
+// let newArr = original.map((el) => el + 5);
+
+// console.log(newArr);
+
+
+
+// // problem 03
+//// Create a new array whose elements are in uppercase of words present in the
+
+// original array.
+
+// let original = ["ali", "salma", "usman", "shaveer"];
+
+// let uppercase = original.map((el) => el.toUpperCase());
+
+// console.log(uppercase);
+
+
+
+
+// // problem 04
+// // Qs4. Write a function called doubleAndReturnArgs which accepts an array and a
+// // variable number of arguments. The function should return a new array with the original
+// // array values and all of the additional arguments doubled.
+
+// function doubleAndReturnArgs(array, ...args){
+//     let newArr = [...array, ...args.map((el) => el+el)];
+//     return newArr;
+// }
+
+// console.log(doubleAndReturnArgs([1,2,3,4], 1,2,3,4,5));
+
+
+
+// // problem 05
+// // Write a function called mergeObjects that accepts two objects and returns a new
+// // object which contains all the keys and values of the first object and second object.
+
+// function mergeObjects(obj1, obj2){
+//     return {...obj1, ...obj2};
+// }
+
+// let student = {
+//     name: "ibrahim",
+//     age: 21,
+//     city: "sahiwal"
+// }
+
+// let college = {
+//     collegeName: "Aspire College",
+//     collegeSince: 2002,
+//     collegeCity: "sahiwal"
+// }
+
+// console.log(mergeObjects(student, college));
