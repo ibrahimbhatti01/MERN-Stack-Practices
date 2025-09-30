@@ -46,3 +46,11 @@
 
 
 
+// let array = [1, 2, 3, 4, 5];
+
+// let doubleArr = array.map((element) => {
+//     console.log(this);
+//     return element * 2;
+// })
+
+// console.log(doubleArr);
