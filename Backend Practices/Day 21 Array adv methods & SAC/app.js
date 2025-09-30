@@ -81,3 +81,12 @@
 // })
 
 // console.log(highAchievers);
+
+
+
+
+// console.log([1,2,3,4].every(n => n%2 === 0));//false
+// console.log([2,4,6,8].every(n => n%2 === 0));//true
+
+// console.log([1,3,5,7].some(n => n%2 === 0));//false
+// console.log([1,2,3,4,5].some(n => n%2 === 0));//true
