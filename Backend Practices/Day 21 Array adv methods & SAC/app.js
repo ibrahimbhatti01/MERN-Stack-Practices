@@ -294,9 +294,23 @@
 // // variable number of arguments. The function should return a new array with the original
 // // array values and all of the additional arguments doubled.
 
+////v1
 // function doubleAndReturnArgs(array, ...args){
 //     let newArr = [...array, ...args.map((el) => el+el)];
 //     return newArr;
+// }
+
+// console.log(doubleAndReturnArgs([1,2,3,4], 1,2,3,4,5));
+
+////v2
+// let doubleAndReturnArgs = (array, ...args) => [...array, ...args.map((el) => el*2)];
+// console.log(doubleAndReturnArgs([1,2,3,4], 1,2,3,4,5));
+
+////v3
+// function doubleAndReturnArgs(array, ...args){
+//     let doubledArgs = args.map((el) => el+el);
+
+//     return [...array, ...doubledArgs]; 
 // }
 
 // console.log(doubleAndReturnArgs([1,2,3,4], 1,2,3,4,5));
