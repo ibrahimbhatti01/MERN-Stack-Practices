@@ -106,3 +106,82 @@
 
 
 
+
+
+// problem 01
+
+// if([10,20,30,40,89].every((element) => element%10 === 0)){
+//     console.log("Yes all number's are multiple of 10");
+// }else{
+//     console.log("No, all numbers are not multiple of 10");
+// }
+
+
+// problem 02 finding minimum in array
+// console.log([1,2,3,4,5,6,7].reduce((min, n) => n < min ? n : min));
+
+// console.log([10,1,2,3,4,5,6,7,0].sort()[0]);
+
+// function min(nums){
+//     return nums.reduce((min, n) => n < min ? n : min);
+// }
+
+
+
+//Spread
+
+// console.log(...[1,2,3,4,5,6]);
+
+//objects are not iterable
+// console.log(...{
+//         name: "saleem",
+//         age: 12
+// })
+
+// console.log(Math.min(...[1,2,3,4,5,5,6,7,7,0]))
+// console.log(Math.max(...[1,2,3,4,5,5,6,7,7,0]))
+
+// console.log(..."ibrahim");
+
+
+
+// Wrong way to copy an array
+
+// let arr = [1,2,3,4]
+// let copy = arr;
+// console.log(copy);
+
+// arr.push(1);
+
+// console.log(copy);
+
+
+// Right way to copy an array using spreads
+
+// let arr = [1,2,3,4,5];
+// let copy = [...arr];
+// console.log(copy);
+
+// arr.push(1);
+
+// console.log(copy);
+// console.log(arr);
+
+
+// Merging 2 arrays
+
+// let odd = [1,3,5,7,9];
+// let even = [2,4,6,8,10];
+
+// let nums = [...odd, ...even];
+
+// console.log(...nums);
+
+
+//Convert string to array
+
+// let name = "ibrahim"
+
+// let nameArr = [...name];
+
+// console.log(nameArr);
