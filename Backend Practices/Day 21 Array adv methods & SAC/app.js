@@ -90,3 +90,19 @@
 
 // console.log([1,3,5,7].some(n => n%2 === 0));//false
 // console.log([1,2,3,4,5].some(n => n%2 === 0));//true
+
+
+
+
+// console.log([1,2,3,4,5].reduce((accumulator, element) => accumulator + element));
+
+// console.log([3,4,52,1,4,5,6,1,1,3,4,5,6,7,0,0,43].reduce((accumulator, element) => {
+//     if(element > accumulator){
+//         return element;
+//     }else{
+//        return accumulator; 
+//     }
+// }))
+
+
+
