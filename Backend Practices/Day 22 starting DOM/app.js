@@ -122,3 +122,7 @@
 // let allImgs = document.querySelectorAll("div img"); //select all, or all nested ones
 
 // console.dir(allImgs); //NodeList array of objects
+
+
+
+
