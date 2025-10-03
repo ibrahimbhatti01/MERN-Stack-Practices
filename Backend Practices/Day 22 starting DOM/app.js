@@ -165,14 +165,64 @@
 
 
 
-console.dir(document.querySelector("div").parentElement); //header
+// console.dir(document.querySelector("div").parentElement); //header
 
-console.dir(document.querySelector("div").children); //HTMLCollection of 2 childs
+// console.dir(document.querySelector("div").children); //HTMLCollection of 2 childs
 
-console.dir(document.querySelector("div").childElementCount); //2
+// console.dir(document.querySelector("div").childElementCount); //2
 
 
-console.dir(document.querySelector("div").previousElementSibling); //null
+// console.dir(document.querySelector("div").previousElementSibling); //null
 
-console.log(document.querySelector("div").nextElementSibling); //web effect div
+// console.log(document.querySelector("div").nextElementSibling); //web effect div
+
+
+
+
+
+
+// let body = document.querySelector("body");
+
+// let container = document.createElement("div");
+// body.insertAdjacentElement("afterbegin",container);
+
+// container.classList.add("container");
+
+
+
+// let p = document.createElement("p");
+
+// container.appendChild(p);
+// p.append("Hey I'm red!");
+// p.style.color = "red";
+
+
+
+// let h3 = document.createElement("h3");
+
+// container.appendChild(h3);
+// h3.innerText = "I'm a blue h3!";
+// h3.style.color = "blue";
+
+
+
+// let div = document.createElement("div");
+// container.append(div);
+// div.style.border = "1px solid black";
+// div.style.background = "pink";
+
+
+
+// let h1 = document.createElement("h1");
+// div.append(h1);
+// h1.innerText = "I'm in a div";
+
+
+// let pInDiv = document.createElement("p");
+// div.appendChild(pInDiv);
+// pInDiv.append("ME TOO!");
+
+
+
+
 
