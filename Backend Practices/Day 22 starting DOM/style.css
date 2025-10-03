@@ -298,3 +298,9 @@ footer {
 .yellowBg {
     background-color: gold;
 }
+
+
+.custom-title {
+    text-decoration: underline purple;
+    
+}
