@@ -126,3 +126,6 @@
 
 
 
+console.log(document.querySelector("img").getAttribute("src"));
+
+document.querySelector("img").setAttribute("class", "firstImage");
