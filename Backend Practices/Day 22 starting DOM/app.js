@@ -126,6 +126,53 @@
 
 
 
-console.log(document.querySelector("img").getAttribute("src"));
+// console.log(document.querySelector("img").getAttribute("src"));
 
-document.querySelector("img").setAttribute("class", "firstImage");
+// document.querySelector("img").setAttribute("class", "firstImage");
+
+
+
+
+// console.dir(document.querySelector("img").style);
+
+// document.querySelector("img").style.cursor = "grab";
+
+
+
+////failed idea
+// let length = document.all.length;
+// while(length){
+//     document.all[length];
+//     length--;
+// }
+
+
+
+
+// console.dir(document.querySelector("div").classList);
+
+// document.querySelector("div").classList.add("yellowBg");
+
+// document.querySelector("div").classList.remove("yellowBg");
+
+// console.log(document.querySelector("div").classList.contains("yellowBg")); //false
+
+// document.querySelector("div").classList.toggle("yellowBg"); //added class to classList
+
+// console.dir(document.querySelector("div").classList);
+
+
+
+
+
+console.dir(document.querySelector("div").parentElement); //header
+
+console.dir(document.querySelector("div").children); //HTMLCollection of 2 childs
+
+console.dir(document.querySelector("div").childElementCount); //2
+
+
+console.dir(document.querySelector("div").previousElementSibling); //null
+
+console.log(document.querySelector("div").nextElementSibling); //web effect div
+

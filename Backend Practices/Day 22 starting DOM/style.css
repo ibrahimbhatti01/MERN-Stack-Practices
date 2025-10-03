@@ -294,3 +294,7 @@ footer {
         padding: 0 10px;
     }
 }
+
+.yellowBg {
+    background-color: gold;
+}
