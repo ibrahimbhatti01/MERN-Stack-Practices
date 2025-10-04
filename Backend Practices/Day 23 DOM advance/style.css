@@ -1,0 +1,13 @@
+.on {
+    background-color: green;
+    color: beige;
+}
+
+
+.lightOff {
+    color:darkgray;
+}
+
+.lightOn {
+    background-color: gold;
+}
