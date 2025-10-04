@@ -147,6 +147,11 @@ light.addEventListener("click", toggleOnOff);
 
 
 
+
+
+
+
+
 let hi = document.querySelector(".sayHi");
 
 function sayHi(){
@@ -204,5 +209,20 @@ colorResetBtn.addEventListener("click", resetRandomColor);
 
 
 
+
+
 colorResetBtn.addEventListener("click", function() {console.log(this)}); //colorResetBtn
 colorResetBtn.addEventListener("click", () => {console.log(this)}); //window
+
+
+
+
+
+
+let input = document.querySelector(".input");
+let submit = document.querySelector(".submit");
+
+input.addEventListener("keyup", function(event) {
+    console.log("key Code = ", event.code);
+    console.log("key = ", event.key);
+})
