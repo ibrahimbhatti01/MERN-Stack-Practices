@@ -211,8 +211,8 @@ colorResetBtn.addEventListener("click", resetRandomColor);
 
 
 
-colorResetBtn.addEventListener("click", function() {console.log(this)}); //colorResetBtn
-colorResetBtn.addEventListener("click", () => {console.log(this)}); //window
+// colorResetBtn.addEventListener("click", function() {console.log(this)}); //colorResetBtn
+// colorResetBtn.addEventListener("click", () => {console.log(this)}); //window
 
 
 
@@ -226,3 +226,21 @@ input.addEventListener("keyup", function(event) {
     console.log("key Code = ", event.code);
     console.log("key = ", event.key);
 })
+
+
+
+
+
+
+
+let form = document.querySelector("form");
+form.addEventListener("submit", function(event){
+    event.preventDefault();//prevent all the default values/actions/operations
+    console.log(event);
+})
+
+
+
+
+
+
