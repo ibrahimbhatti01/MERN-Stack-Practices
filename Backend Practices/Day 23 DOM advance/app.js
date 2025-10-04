@@ -69,48 +69,81 @@ console.log(document.querySelector("button").nextElementSibling.getAttribute("on
 
 
 
+// let fan = document.querySelector(".fanToggle");
+
+// function fanToggle(){
+//     if(fan.classList.contains("off")){
+//         fan.classList.remove("off");
+//         alert("Turning on the Fan");
+//         fan.classList.add("on");
+//     }else{
+//         fan.classList.remove("on");
+//         alert("Turning off the Fan");
+//         fan.style.backgroundColor = "";
+//         fan.classList.add("off");
+//     }
+// }
+
+// fan.onclick = fanToggle;
+
+// let light = document.querySelector(".lightToggle");
+
+// function lightToggle(){
+//     if(light.classList.contains("lightOff")){
+//         light.classList.remove("lightOff");
+//         alert("Turning on the light");
+//         light.innerText = "🔦💡";
+//         light.classList.add("lightOn");
+//     }else{
+//         light.classList.remove("lightOn");
+//         alert("Turning off the light");
+//         light.innerText = "🔦";
+//         light.style.backgroundColor = "";
+//         light.classList.add("lightOff");
+//     }
+// }
+
+// light.onclick = lightToggle;
+
+
+
+
 let fan = document.querySelector(".fanToggle");
-
-function fanToggle(){
-    if(fan.classList.contains("off")){
-        fan.classList.remove("off");
-        alert("Turning on the Fan");
-        fan.classList.add("on");
-    }else{
-        fan.classList.remove("on");
-        alert("Turning off the Fan");
-        fan.style.backgroundColor = "";
-        fan.classList.add("off");
-    }
-}
-
-fan.onclick = fanToggle;
-
-
+fan.title = "fan";
 
 let light = document.querySelector(".lightToggle");
+light.title = "light";
 
-function lightToggle(){
-    if(light.classList.contains("lightOff")){
-        light.classList.remove("lightOff");
-        alert("Turning on the light");
-        light.innerText = "🔦💡";
-        light.classList.add("lightOn");
+function toggleOnOff(){
+    if(this.title == "fan"){
+        if(this.classList.contains("off")){
+            this.classList.remove("off");
+            alert("Turning on the Fan");
+            this.classList.add("on");
+        }else{
+            this.classList.remove("on");
+            alert("Turning off the Fan");
+            this.style.backgroundColor = "";
+            this.classList.add("off");
+        }
     }else{
-        light.classList.remove("lightOn");
-        alert("Turning off the light");
-        light.innerText = "🔦";
-        light.style.backgroundColor = "";
-        light.classList.add("lightOff");
+        if(this.classList.contains("lightOff")){
+            this.classList.remove("lightOff");
+            alert("Turning on the light");
+            this.innerText = "🔦💡";
+            this.classList.add("lightOn");
+        }else{
+            this.classList.remove("lightOn");
+            alert("Turning off the light");
+            this.innerText = "🔦";
+            this.style.backgroundColor = "";
+            this.classList.add("lightOff");
+        }
     }
 }
 
-light.onclick = lightToggle;
-
-
-
-
-
+fan.addEventListener("click", toggleOnOff);
+light.addEventListener("click", toggleOnOff);
 
 
 
@@ -167,3 +200,9 @@ colorBtn.addEventListener("click", generateRandomColor);
 
 let colorResetBtn = document.querySelector(".colorResetBtn");
 colorResetBtn.addEventListener("click", resetRandomColor);
+
+
+
+
+colorResetBtn.addEventListener("click", function() {console.log(this)}); //colorResetBtn
+colorResetBtn.addEventListener("click", () => {console.log(this)}); //window
