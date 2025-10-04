@@ -66,6 +66,9 @@ console.log(document.querySelector("button").nextElementSibling.getAttribute("on
 
 
 
+
+
+
 let fan = document.querySelector(".fanToggle");
 
 function fanToggle(){
@@ -103,3 +106,32 @@ function lightToggle(){
 }
 
 light.onclick = lightToggle;
+
+
+
+
+
+
+
+
+let hi = document.querySelector(".sayHi");
+
+function sayHi(){
+    alert("Hi");
+}
+
+function sayName(){
+    alert("Hi ibrahim");
+}
+
+// hi.onclick = sayHi; //will not work
+// hi.onclick = sayName;
+
+hi.addEventListener("click", sayHi); //will work
+hi.addEventListener("click", sayName); //will work
+
+
+
+
+
+
