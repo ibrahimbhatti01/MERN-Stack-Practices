@@ -11,3 +11,15 @@
 .lightOn {
     background-color: gold;
 }
+
+
+body {
+    text-align: center;
+}
+
+.colorDiv {
+    height: 100px;
+    width: 70%;
+    border: 1px solid black;
+    margin: auto;
+}

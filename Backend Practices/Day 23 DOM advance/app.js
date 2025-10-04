@@ -135,3 +135,35 @@ hi.addEventListener("click", sayName); //will work
 
 
 
+
+
+let h3Content = document.querySelector(".colorH3").innerText;
+
+function generateRandomColor(){
+    let R = Math.floor(Math.random()*256);
+    let G = Math.floor(Math.random()*256);
+    let B = Math.floor(Math.random()*256);
+
+    let colorH3 = document.querySelector(".colorH3");
+    let colorDiv = document.querySelector(".colorDiv");
+
+    colorDiv.style.backgroundColor = `rgb(${R},${G},${B})`;
+    colorH3.style.color = `rgb(${R},${G},${B})`;
+    colorH3.innerText = `rgb(${R},${G},${B})`;
+}
+
+function resetRandomColor() {
+    let colorH3 = document.querySelector(".colorH3");
+    let colorDiv = document.querySelector(".colorDiv");
+
+    colorDiv.style.backgroundColor = "";
+    colorH3.style.color = "";
+    colorH3.innerText = h3Content;
+}
+
+
+let colorBtn = document.querySelector(".colorBtn");
+colorBtn.addEventListener("click", generateRandomColor);
+
+let colorResetBtn = document.querySelector(".colorResetBtn");
+colorResetBtn.addEventListener("click", resetRandomColor);
