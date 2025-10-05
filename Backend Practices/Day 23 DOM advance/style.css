@@ -23,3 +23,22 @@ body {
     border: 1px solid black;
     margin: auto;
 }
+
+
+#scroll-box {
+    margin: auto;
+  overflow: scroll;
+  height: 100px;
+  width: 100px;
+  float: left;
+}
+
+#scroll-box p {
+  text-align: left;
+  height: 200px;
+  width: 200px;
+}
+
+#output {
+  text-align: center;
+}

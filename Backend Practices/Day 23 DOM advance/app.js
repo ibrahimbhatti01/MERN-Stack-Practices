@@ -236,7 +236,54 @@ input.addEventListener("keyup", function(event) {
 let form = document.querySelector("form");
 form.addEventListener("submit", function(event){
     event.preventDefault();//prevent all the default values/actions/operations
-    console.log(event);
+    console.dir(event);
+    console.dir(this);
+    console.dir(this.elements);
+    console.log(this.elements[0].value);
+})
+
+
+
+
+
+
+let textArea = document.querySelector("#textArea");
+// textArea.addEventListener("input", function(event) {
+//     console.log(event.data);//data in every single input
+//     console.dir(this.value);//changing value of textArea
+//     console.dir(event.target.value);//changing value of textArea
+// })
+
+textArea.addEventListener("change", function(event) {
+    // console.log(event.data);//invalid, change event do not have data
+    // console.dir(this.value);
+    // console.dir(event);
+})
+
+let textInput = document.querySelector(".textInput");
+textInput.addEventListener("input", function(event){
+    // console.log(event.data);
+    textArea.value = this.value;
+})
+
+textInput.addEventListener("change", function(event){
+    this.value = "";
+})
+
+
+
+
+
+let scrollBox = document.querySelector("#scroll-box");
+let outputMsg = document.querySelector("#output");
+
+scrollBox.addEventListener("scroll", function(){
+    outputMsg.innerText = "Scroll event fired!";
+    setTimeout(() => {
+        // console.log(this);
+        outputMsg.innerText = "Waiting on scroll events..";
+    }, 1000);
+    console.log("waiting done");
 })
 
 
