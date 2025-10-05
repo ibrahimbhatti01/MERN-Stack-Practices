@@ -307,3 +307,18 @@ greenBtn.addEventListener("click", function(){
 
 
 
+let nameH2 = document.querySelector(".nameH2");
+let inputH2 = document.querySelector(".inputH2");
+
+let defaultName = nameH2.innerText;
+
+inputH2.addEventListener("input", function(event){
+    if(inputH2.value.length){
+        this.value = this.value.replace(/[^a-zA-Z ]/g, '');
+        nameH2.innerText = inputH2.value;
+        if( !inputH2.value.length ) 
+            nameH2.innerText = defaultName;
+    }
+    else
+        nameH2.innerText = defaultName;
+})
