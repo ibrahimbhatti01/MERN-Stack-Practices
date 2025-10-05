@@ -314,7 +314,8 @@ let defaultName = nameH2.innerText;
 
 inputH2.addEventListener("input", function(event){
     if(inputH2.value.length){
-        this.value = this.value.replace(/[^a-zA-Z ]/g, '');
+        //replace any character outside of ↓ a-z, A-Z, " " with "";
+        this.value = this.value.replace(/[^a-z ]/ig, '');
         nameH2.innerText = inputH2.value;
         if( !inputH2.value.length ) 
             nameH2.innerText = defaultName;
