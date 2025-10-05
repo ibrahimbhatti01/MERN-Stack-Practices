@@ -288,6 +288,22 @@ scrollBox.addEventListener("scroll", function(){
 
 
 
+// Qs2. Create a button on the page using JavaScript. Add an event listener to the button
+// that changes the button’s color to green when it is clicked.
+
+let body = document.querySelector("body");
+let greenBtn = body.insertAdjacentElement("afterbegin", document.createElement("button"));
+greenBtn.innerText = "click black magic";
+greenBtn.addEventListener("click", function(){
+    if(greenBtn.style.color == ""){
+        greenBtn.style.color = "green";
+        greenBtn.innerText = "click green magic";
+    }
+    else{
+        greenBtn.style.color = "";
+        greenBtn.innerText = "click black magic";
+    }
+})
 
 
 
