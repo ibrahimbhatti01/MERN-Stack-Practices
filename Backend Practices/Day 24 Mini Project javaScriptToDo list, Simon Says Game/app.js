@@ -20,3 +20,18 @@ for(li of lis){
         event.stopPropagation();
         console.log("li was clicked");
 })}
+
+
+
+
+
+
+
+
+let todoList = document.querySelector(".todo-list");
+let todoInput = document.querySelector(".todo-input");
+todoInput.addEventListener("change", function (event){
+    let tempLi = todoList.insertAdjacentElement("afterbegin",document.createElement("li"));
+    tempLi.innerText = this.value.trim();
+    this.value = "";
+})
