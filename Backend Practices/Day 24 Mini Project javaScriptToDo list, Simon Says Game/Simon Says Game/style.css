@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: bisque;
+}
+
+body {
+    text-align: center;
+    padding-top: 20vh;
+}
+
+.box-container{
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    align-content: center;
+    background-color: rgba(127, 255, 212, 0.244);
+    height: 200px;
+    width: 200px;
+    margin: 25px 25px 0px 0px;
+    border-radius: 10%;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.upper-left{
+    background-color: #d55075;
+}
+
+.bottom-left{
+    background-color: #58a0b9;
+}
+
+.upper-right{
+    background-color: #fa903b;
+}
+
+.bottom-right{
+    background-color: #5679f5;
+}
