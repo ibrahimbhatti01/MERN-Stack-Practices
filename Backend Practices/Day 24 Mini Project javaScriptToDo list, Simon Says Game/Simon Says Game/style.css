@@ -1,12 +1,13 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: bisque;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 body {
     text-align: center;
     padding-top: 20vh;
+    background-color: bisque;
 }
 
 .box-container{
@@ -30,7 +31,7 @@ body {
 }
 
 .bottom-left{
-    background-color: #58a0b9;
+    background-color: #93e4ff;
 }
 
 .upper-right{
