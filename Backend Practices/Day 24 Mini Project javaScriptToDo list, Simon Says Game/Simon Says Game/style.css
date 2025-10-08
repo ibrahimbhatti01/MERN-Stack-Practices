@@ -6,7 +6,7 @@
 
 body {
     text-align: center;
-    padding-top: 20vh;
+    padding-top: 15vh;
     background-color: bisque;
 }
 
@@ -40,4 +40,8 @@ body {
 
 .bottom-right{
     background-color: #5679f5;
+}
+
+.prev-high-score{
+    margin: 10px 0 0 0;
 }

@@ -5,6 +5,8 @@ let buttons = document.querySelectorAll(".box");
 let gameStarted = false;
 let level = 0;
 
+let prevHighScore = [];
+
 document.addEventListener("keypress", function(){
     if(!gameStarted){
         gameStarted = true;
@@ -58,7 +60,11 @@ function levelUpdate(){
 
 function gameOver(){
     const highestScore = level-1;
-    console.log(highestScore);
+    
+    prevHighScore.push(highestScore);
+
+    document.querySelector(".prev-high-score").innerText = `Highest Scoore: ${Math.max(...prevHighScore)}`;
+
     document.querySelector(".score-board").innerHTML = `Game Over 😙, Your Score is: <b>${highestScore}</b> <br> Press any key to continue.`;
     document.querySelector("body").style.backgroundColor = "#B00020";
 
@@ -74,8 +80,8 @@ function gameOver(){
         document.querySelector("body").style.backgroundColor = "";
     }, 150);
 
-    console.log(gameSeq);
-    console.log(userSeq);
+    // console.log(gameSeq);
+    // console.log(userSeq);
     gameSeq = [];
     userSeq = [];
 
