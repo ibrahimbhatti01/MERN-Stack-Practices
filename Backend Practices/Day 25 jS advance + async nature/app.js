@@ -68,7 +68,7 @@
 //                         changeColor("#1F75FE", () => {
 //                             changeColor("#FFFF00", ()=>{
 //                                 changeColor("#4B5320", () => {
-//                                     changeColor("#EE82EE", repeat)
+//                                     changeColor("#EE82EE",repeat)
 //                                 });
 //                             });
 //                         });
@@ -81,4 +81,55 @@
 // }
 
 // repeat()
+
+
+
+
+
+
+
+
+
+// function saveToDb(data, success, failure){
+//     let internetSpeed = Math.floor(Math.random() * 10) + 1;
+
+//     if(internetSpeed > 4)
+//         success(data);
+//     else
+//         failure();
+// }
+
+// // CallBack HELLL 🔥💀
+// // only save data to DB if internet speed is good. 
+// saveToDb("hello.", (data)=>{
+//     console.log("Data saved: ", data);
+//     saveToDb("kaisy hoo?", (data)=>{
+//         console.log("Data2 saved: ", data);
+//         saveToDb("shukar allah ka ap sunao?", (data)=>{
+//             console.log("Data3 saved: ", data);
+//             saveToDb("Jee mn b thk hu, btao kidhr ho?", (data)=>{
+//                 console.log("Data4 saved: ", data);
+//                 saveToDb("mn agya hu wapis, ap gay thy college aj?", (data)=>{
+//                     console.log("Data5 saved: ", data);
+//                 }, ()=>{
+//                     console.log("weak connection, data5 couldnt saved.");
+//                 })
+//             }, ()=>{
+//                 console.log("weak connection, data4 couldnt saved.");
+//             })
+//         }, ()=>{
+//             console.log("weak connection, data3 couldnt saved.");
+//         })
+//     }, ()=>{
+//         console.log("weak connection, data2 couldnt saved.");
+//     })
+// }, ()=>{
+//     console.log("weak connection, data couldnt saved.");
+// })
+
+
+
+
+
+
 
