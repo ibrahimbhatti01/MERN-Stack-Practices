@@ -16,7 +16,7 @@
 // console.log("done, tata bye!");
 
 
-////example to illustrate js Call Stack
+// //example to illustrate js Call Stack
 // function one() {
 //     return 1;
 // }
@@ -34,4 +34,10 @@
 
 
 
-    
+
+
+// setTimeout(() => {
+//     console.log("Kaiy hoo? businessman");
+// }, 1000);
+
+// console.log("hello..");
