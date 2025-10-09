@@ -133,3 +133,106 @@
 
 
 
+function saveToDb(data){
+    return new Promise((resolve, reject)=>{
+        let internetSpeed = Math.floor(Math.random() * 10) + 1;
+
+        if(internetSpeed > 4)
+            resolve(`Data Saved: ${data}`);
+        else    
+            reject("Weak Connection");
+    })
+}
+
+//Handling Promises
+// let request = saveToDb("salam world!");
+// request
+//     .then(()=>{
+//         console.log("Promise resolved!");
+//         console.log(this);
+//     })
+//     .catch(()=>{
+//         console.log("Promise rejected!");
+//         console.log(this);
+//     })
+
+//Handling Promises - More compact form
+// saveToDb("waalikum salam world!")
+//     .then(()=>{
+//         console.log("Promise resolved!");
+//         // console.log(this);//window
+//     })
+//     .catch(()=>{
+//         console.log("Promise rejected!");
+//         // console.log(this);//window
+//     })
+
+
+
+
+//Promise chaining
+// saveToDb("salam world!")
+//     .then(()=>{
+//         console.log("Promise resolved!");
+//         // console.log(this);//window
+//         saveToDb("waalikum salam world!")
+//             .then(()=>{
+//                 console.log("Promise resolved!");
+//                 saveToDb("kaisy ho world!?")
+//                     .then(()=>{
+//                         console.log("Promise resolved!");
+//                     })
+//                     .catch(()=>{
+//                         console.log("Promise rejected!");
+//                     })
+//             })
+//             .catch(()=>{
+//                 console.log("Promise rejected!");
+//             })
+//     })
+//     .catch(()=>{
+//         console.log("Promise rejected!");
+//         // console.log(this);//window
+//     })
+
+
+
+// //Promise Chaining - More compact form
+// saveToDb("salam world!")
+//     .then(()=>{
+//         console.log("Promise resolved");
+//         return saveToDb("waalikum salam world!");
+//     })
+//     .then(()=>{
+//         console.log("Promise2 resolved");
+//         return saveToDb("kaisy ho world!?");
+//     })
+//     .then(()=>{
+//         console.log("Promise3 resolved");
+//     })
+//     .catch(()=>{
+//         console.log("Promise rejected");
+//     })
+
+
+
+//Promise Chaining - More compact form - using result and error
+saveToDb("salam world!")
+    .then((result)=>{
+        console.log("Promise resolved");
+        console.log(result);
+        return saveToDb("waalikum salam world!");
+    })
+    .then((result)=>{
+        console.log("Promise2 resolved");
+        console.log(result);
+        return saveToDb("kaisy ho world!?");
+    })
+    .then((result)=>{
+        console.log("Promise3 resolved");
+        console.log(result);
+    })
+    .catch((error)=>{
+        console.log("Promise rejected");
+        console.log(error);
+    })
