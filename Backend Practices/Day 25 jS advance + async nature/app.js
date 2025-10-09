@@ -14,3 +14,24 @@
 // demo();
 
 // console.log("done, tata bye!");
+
+
+////example to illustrate js Call Stack
+// function one() {
+//     return 1;
+// }
+
+// function two(){
+//     return one() + one();
+// }
+
+// function three(){
+//     let ans =  two() + one();
+//     return ans;
+// }
+
+// three();
+
+
+
+    
