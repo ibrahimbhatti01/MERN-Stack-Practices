@@ -36,7 +36,6 @@
 
 
 
-// 
 //     console.log("Kaiy hoo? businessman");
 // }, 1000);
 
@@ -133,16 +132,16 @@
 
 
 
-function saveToDb(data){
-    return new Promise((resolve, reject)=>{
-        let internetSpeed = Math.floor(Math.random() * 10) + 1;
+// function saveToDb(data){
+//     return new Promise((resolve, reject)=>{
+//         let internetSpeed = Math.floor(Math.random() * 10) + 1;
 
-        if(internetSpeed > 4)
-            resolve(`Data Saved: ${data}`);
-        else    
-            reject("Weak Connection");
-    })
-}
+//         if(internetSpeed > 4)
+//             resolve(`Data Saved: ${data}`);
+//         else    
+//             reject("Weak Connection");
+//     })
+// }
 
 //Handling Promises
 // let request = saveToDb("salam world!");
@@ -216,23 +215,77 @@ function saveToDb(data){
 
 
 
-//Promise Chaining - More compact form - using result and error
-saveToDb("salam world!")
-    .then((result)=>{
-        console.log("Promise resolved");
-        console.log(result);
-        return saveToDb("waalikum salam world!");
+// //Promise Chaining - More compact form - using result and error
+// saveToDb("salam world!")
+//     .then((result)=>{
+//         console.log("Promise resolved");
+//         console.log(result);
+//         return saveToDb("waalikum salam world!");
+//     })
+//     .then((result)=>{
+//         console.log("Promise2 resolved");
+//         console.log(result);
+//         return saveToDb("kaisy ho world!?");
+//     })
+//     .then((result)=>{
+//         console.log("Promise3 resolved");
+//         console.log(result);
+//     })
+//     .catch((error)=>{
+//         console.log("Promise rejected");
+//         console.log(error);
+//     })
+
+
+
+
+
+
+
+
+
+
+
+
+let h2 = document.querySelector(".salam");
+
+function changeColor(color, delay = 1000){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            h2.style.color = `${color}`;
+            resolve();
+        }, delay);
     })
-    .then((result)=>{
-        console.log("Promise2 resolved");
-        console.log(result);
-        return saveToDb("kaisy ho world!?");
-    })
-    .then((result)=>{
-        console.log("Promise3 resolved");
-        console.log(result);
-    })
-    .catch((error)=>{
-        console.log("Promise rejected");
-        console.log(error);
-    })
+}
+
+function animateColors(){
+    changeColor("#F48020")
+        .then(()=>{
+            return changeColor("#E60026");
+        })
+        .then(()=>{
+            return changeColor("#720e9e");
+        })
+        .then(()=>{
+            return changeColor("#FEBE10");
+        })
+        .then(()=>{
+            return changeColor("#50C878");
+        })
+        .then(()=>{
+            return changeColor("#1F75FE");
+        })
+        .then(()=>{
+            return changeColor("#FFFF00");
+        })
+        .then(()=>{
+            return changeColor("#4B5320");
+        })
+        .then(()=>{
+            changeColor("#EE82EE");
+        })
+        .catch(() => {
+            console.log("unknown error, color couldn't change");
+        })
+    }
+animateColors();
