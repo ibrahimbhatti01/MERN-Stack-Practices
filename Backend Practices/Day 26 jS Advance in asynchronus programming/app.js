@@ -13,7 +13,7 @@
     
 // }
 
-//OLD FORM
+//OLD FORM - USING PROMISE METHODS
 // greet()
 //     .then((result)=>{
 //         console.log("call successful");
@@ -60,27 +60,27 @@
 //      num();
 // }
 
-async function num(){
-    return new Promise((resolve, reject)=>{ 
-        setTimeout(()=>{
-        console.log( Math.floor(Math.random() * 10) + 1);
-        resolve();
-    }, 1000);
-    // abc.abc();
-    // reject();
-})
-}
+// async function num(){
+//     return new Promise((resolve, reject)=>{ 
+//         setTimeout(()=>{
+//         console.log( Math.floor(Math.random() * 10) + 1);
+//         resolve();
+//     }, 1000);
+//     // abc.abc();
+//     // reject();
+// })
+// }
 
-async function demo() {
-    try{
-        await num();
-        await num();
-        num();
-    }catch(error){
-        console.log(error);
-    }
-}
-demo();
+// async function demo() {
+//     try{
+//         await num();
+//         await num();
+//         num();
+//     }catch(error){
+//         console.log(error);
+//     }
+// }
+// demo();
 
 
 
