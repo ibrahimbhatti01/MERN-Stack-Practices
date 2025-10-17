@@ -116,5 +116,30 @@
 
 
 
+// //JSON data returned from API is as a string
+// let res = '{"fact":"The largest cat breed is the Ragdoll. Male Ragdolls weigh between 12 and 20 lbs (5.4-9.0 k). Females weigh between 10 and 15 lbs (4.5-6.8 k).","length":141}';
 
+// console.log(res.fact); //undefined, cause res isn't a js object.
+
+// console.log(JSON.parse(res)); //js object
+
+// console.log(JSON.parse(res).fact); //fact key value
+
+// console.log(JSON.parse(res).length); //length key value
+
+// console.log(JSON.stringify(JSON.parse(res))); //object json again into string json
+
+
+
+
+// let obj = {
+//     name: "ibrahim",
+//     age: 20
+// }
+
+// let JSONData = JSON.stringify(obj);
+
+// console.log(JSONData); // JSON string data
+
+// console.log(JSON.stringify(obj).name); //undefined - cuz obj is now a string json data
 
