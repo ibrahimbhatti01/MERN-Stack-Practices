@@ -143,3 +143,18 @@
 
 // console.log(JSON.stringify(obj).name); //undefined - cuz obj is now a string json data
 
+
+
+
+
+
+
+
+// What is Ajax ??
+// Ajax - A process of making calls(req/res) to API's asynchronously and dealing with returned JSON(nowadays, xml is old) data is known as Ajax calling.
+
+
+
+
+
+
