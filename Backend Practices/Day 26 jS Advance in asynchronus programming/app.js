@@ -13,7 +13,7 @@
     
 // }
 
-//OLD FORM - USING PROMISE METHODS
+// OLD FORM - USING PROMISE METHODS
 // greet()
 //     .then((result)=>{
 //         console.log("call successful");
@@ -39,7 +39,7 @@
 
 
 
-//NOT VALID, await can only be used inside async functions
+// NOT VALID, await can only be used inside async functions
 // let res = await greet();
 // console.log(res);
 
@@ -86,7 +86,7 @@
 
 
 
-//IMPROVED USING async and await
+// IMPROVED USING async and await
 // let h2 = document.querySelector(".salam");
 
 // function changeColor(color, delay = 1000){
@@ -158,3 +158,55 @@
 
 
 
+let url = 'https://api.thecatapi.com/v1/images/search';
+
+console.log(fetch(url));
+
+// fetch(url)
+//     .then((response) => {
+//         // console.log(response);
+//         // let data = response.json();
+//         // console.log(data);
+//         // // return response.json(); //stream can be read just once.
+//         // return data;
+//         return response.json();
+//     })
+//     .then((data) => {
+//         console.log(data[0].url);
+//         return fetch(url);
+//     })
+//     .then((response2) => {
+//         return response2.json();
+//     })
+//     .then((data2) => {
+//         console.log(data2[0].url);
+//     })
+//     .catch((error) => {
+//         console.log("ERROR: ", error);
+//     })
+
+
+// (async function fetchFunc(url) {
+//     try {
+//         let data = await fetch(url); //returns a non readable data stream response
+//         let dataObj = await data.json(); //return api's exact response
+//         console.log(dataObj[0].url);
+
+//         let data2 = await fetch(url);
+//         let dataObj2 = await data2.json();
+//         console.log(dataObj2[0].url);
+//     } catch (error) {
+//         console.log(error, "Error getting response");
+//     }
+// })(url)
+
+
+(async function(url){
+    try {
+        let response = await axios.get(url); // return object with exact readable json data;
+        console.log(response.data[0].url);
+    } catch (error) {
+        console.log(error);
+    }
+    
+})(url)
