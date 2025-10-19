@@ -27,3 +27,32 @@ async function getRandCat(link){
         console.log(error);
     }
 }
+
+
+
+
+
+
+
+// //Sending headers with request
+// const URL = "https://icanhazdadjoke.com";
+// (async function(url){
+//     const config = { 
+//         headers: {
+//             accept: "text/plain"
+//         }
+//     }
+
+//     // console.log(await axios.get(url)); //default Html data
+//     // console.log(await axios.get(url, config)); //json format data in response
+
+//     let res = await axios.get(url, config);
+//     console.log(res.data);
+// })(URL)
+
+
+
+
+
+
+
