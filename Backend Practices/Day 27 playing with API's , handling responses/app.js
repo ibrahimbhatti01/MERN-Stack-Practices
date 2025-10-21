@@ -88,6 +88,3 @@ async function getRandCat(link){
 
 
 
-
-
-
